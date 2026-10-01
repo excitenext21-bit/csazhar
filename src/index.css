@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Marcellus", "Playfair Display", "Cinzel", ui-serif, Georgia, serif;
+  --font-display: "Cinzel", "Marcellus", serif;
+
+  --color-gold-base: #b8967e;
+  --color-gold-dark: #9a7862;
+  --color-gold-light: #d6c0b0;
+  --color-gold-accent: #c5a880;
+
+  --color-navy-darkest: #001B41;
+  --color-navy-dark: #001B41;
+  --color-navy-mid: #12243e;
+  --color-navy-surface: #1a2f4c;
+  --color-navy-light: #253d61;
+
+  --color-cream-bg: #fcfbf9;
+  --color-card-bg: #ffffff;
+}
+
+/* Custom scrollbar matching Igual luxury styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001B41;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8967e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d6c0b0;
+}
+
+/* ==========================================================================
+   Igual Law Firm Design System Utilities
+   ========================================================================== */
+
+/* Sub-title / Eyebrow Label (Matches Igual .sub-title) */
+.sub-title {
+  color: #b8967e;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sub-title::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: #b8967e;
+}
+
+/* Section Title Typography */
+.section-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+/* Signature Igual Two-Part Action Button [ + | ACTION ] */
+.igual-btn {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.igual-btn:hover {
+  box-shadow: 0 6px 20px rgba(184, 150, 126, 0.25);
+  transform: translateY(-1px);
+  border-color: rgba(197, 168, 128, 0.6);
+}
+
+.igual-btn-icon {
+  background-color: #ffffff;
+  color: #001B41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  font-weight: 700;
+  font-size: 17px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.igual-btn-text {
+  background-color: #b8967e;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.igual-btn:hover .igual-btn-icon {
+  background-color: #f7f4f0;
+  color: #b8967e;
+}
+
+.igual-btn:hover .igual-btn-text {
+  background-color: #a68269;
+}
+
+/* Secondary Dark Variant of the Two-Part Button */
+.igual-btn-dark .igual-btn-icon {
+  background-color: #12243e;
+  color: #b8967e;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.igual-btn-dark .igual-btn-text {
+  background-color: #001B41;
+  color: #ffffff;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.igual-btn-dark:hover .igual-btn-icon {
+  background-color: #b8967e;
+  color: #ffffff;
+}
+
+.igual-btn-dark:hover .igual-btn-text {
+  background-color: #12243e;
+  color: #b8967e;
+}
+
+/* Header Phone Hover Underline Animation (.h-phone) */
+.h-phone {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.h-phone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background-color: #b8967e;
+  transition: width 0.3s ease;
+}
+
+.h-phone:hover::after {
+  width: 100%;
+}
+
+/* Gold Gradient Utilities & Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #e3cdb9 0%, #b8967e 50%, #9a7862 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #c5a880 0%, #b8967e 50%, #9a7862 100%);
+}
+
+.navy-gradient-bg {
+  background: linear-gradient(180deg, #001B41 0%, #00132e 100%);
+}
+
+.navy-card-gradient {
+  background: linear-gradient(145deg, rgba(26, 47, 76, 0.95) 0%, rgba(9, 23, 46, 0.98) 100%);
+}
+
+/* Decorative Igual section dividers */
+.igual-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.igual-divider::before,
+.igual-divider::after {
+  content: "";
+  height: 1px;
+  width: 44px;
+  background: linear-gradient(to right, transparent, #b8967e);
+}
+
+.igual-divider::after {
+  background: linear-gradient(to left, transparent, #b8967e);
+}
+
+/* Circular experience badge from Igual Hero */
+.igual-exp-badge {
+  border: 1px dashed rgba(184, 150, 126, 0.7);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 15, 24, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.igual-exp-badge:hover {
+  transform: scale(1.05);
+  border-color: #b8967e;
+}
+
+/* Keyframes for luxury ambient orbs */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.08); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 8s infinite ease-in-out;
+}
