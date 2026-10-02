@@ -60,70 +60,61 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  // All 9 Services from Image 1 ("Services Offered")
+  // All 9 Services with concise 2-line descriptions
   const practiceCards = [
     {
       id: "business-setup-and-closure-services",
       icon: Building2,
       title: "Business Setup & Closure Services",
-      desc: "End-to-end incorporation of Private/Public companies, Section 8, OPC, foreign subsidiaries, and structured fast-track entity exit.",
-      image: "/practice_corporate.jpg"
+      desc: "End-to-end incorporation of companies, Section 8, OPCs, and structured corporate exits.",
     },
     {
       id: "limited-liability-partnership",
       icon: Layers,
       title: "Limited Liability Partnership",
-      desc: "Structuring, incorporation, tailored LLP agreements, partner additions/cessation, and annual statement of accounts & solvency filings.",
-      image: "/practice_audit.jpg"
+      desc: "LLP incorporation, tailored partnership agreements, modifications, and annual compliances.",
     },
     {
       id: "corporate-advisory-and-compliances",
       icon: Compass,
       title: "Corporate Advisory & Compliances",
-      desc: "Retainer-based corporate secretarial services, statutory registers, board/shareholder meetings, and MCA V3 filings.",
-      image: "/practice_ip.jpg"
+      desc: "Corporate secretarial audit, board & shareholder meetings, registers, and MCA V3 filings.",
     },
     {
       id: "corporate-and-financial-restructuring",
       icon: TrendingUp,
       title: "Corporate & Financial Restructuring",
-      desc: "Strategic advisory on Mergers, Demergers, Fast-Track Amalgamations, Capital Reductions, and NCLT Schemes of Arrangement.",
-      image: "/vision_card.jpg"
+      desc: "Advisory on mergers, demergers, capital reductions, and NCLT schemes of arrangement.",
     },
     {
       id: "due-diligence",
       icon: Search,
       title: "Due Diligence",
-      desc: "In-depth corporate health checks for M&A, private equity investments, bank loan credit facilities, and pre-IPO verification.",
-      image: "/mission_card.jpg"
+      desc: "Comprehensive corporate compliance checks for M&A, PE funding, and credit facilities.",
     },
     {
       id: "fema-and-rbi",
       icon: Globe2,
       title: "FEMA & RBI",
-      desc: "Cross-border transaction reporting, Inbound FDI, Outbound Overseas Direct Investment (ODI), ECB, and FIRMS portal filings.",
-      image: "/hero_bg.jpg"
+      desc: "Cross-border transaction reporting, inbound FDI, outbound ODI, and RBI FIRMS filings.",
     },
     {
       id: "audit-and-certification",
       icon: Award,
       title: "Audit & Certification",
-      desc: "Mandatory Section 204 Secretarial Audits (Form MR-3), Annual Return Certifications (MGT-8), and Governance compliance.",
-      image: "/practice_audit.jpg"
+      desc: "Section 204 secretarial audits (Form MR-3), annual returns (MGT-8), and certifications.",
     },
     {
       id: "sebi-and-listing-compliances",
       icon: BarChart3,
       title: "SEBI & Listing Compliances",
-      desc: "Advisory on SEBI (LODR), IPO secretarial readiness, Insider Trading (PIT) code, Takeover (SAST) disclosures, and delisting.",
-      image: "/practice_corporate.jpg"
+      desc: "Advisory on SEBI LODR, IPO secretarial readiness, insider trading code, and takeover norms.",
     },
     {
       id: "representation-and-other-services",
       icon: Scale,
       title: "Representation & Other Services",
-      desc: "Advocacy, petitions, and appearances before NCLT, Ministry of Corporate Affairs, Regional Directors, RoC, and Trademark Registry.",
-      image: "/hero_lady_justice.jpg"
+      desc: "Advocacy and regulatory representation before NCLT, MCA, RD, ROC, and Trademark Registry.",
     }
   ];
 
@@ -131,7 +122,7 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
     if (carouselRef.current) {
       const container = carouselRef.current;
       const card = container.firstElementChild as HTMLElement;
-      const cardWidth = card ? card.offsetWidth + 20 : 320;
+      const cardWidth = card ? card.offsetWidth : 260;
       const maxScroll = container.scrollWidth - container.clientWidth;
       
       if (container.scrollLeft >= maxScroll - 15) {
@@ -146,7 +137,7 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
     if (carouselRef.current) {
       const container = carouselRef.current;
       const card = container.firstElementChild as HTMLElement;
-      const cardWidth = card ? card.offsetWidth + 20 : 320;
+      const cardWidth = card ? card.offsetWidth : 260;
       
       if (container.scrollLeft <= 15) {
         const maxScroll = container.scrollWidth - container.clientWidth;
@@ -182,7 +173,7 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
           SECTION 1: THE ABOUT US HERO / TOP NARRATIVE BLOCK (Exact Igual Design)
          ========================================================================= */}
       <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Signature Arched Portrait with Central Badge & Quote Below */}
           <div className="lg:col-span-5 space-y-6">
@@ -220,17 +211,17 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
 
           </div>
 
-          {/* Right Column: Title, Story, Team Photo & Overlaid "ASK A PARTNER" Card */}
-          <div className="lg:col-span-7 space-y-7">
+          {/* Right Column: Title & Story Adjusted Adjacent to Left Portrait */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             
             {/* Main Section Heading */}
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[54px] font-normal text-[#001B41] leading-[1.14] tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[42px] font-normal text-[#001B41] leading-[1.2] tracking-tight">
               We Provide High-End Legal, <br />
               <span className="font-serif italic text-[#b8967e]">Compliance, and Governance Advisory</span>
             </h2>
 
             {/* Narrative Paragraphs */}
-            <div className="space-y-4 text-sm sm:text-base text-zinc-600 font-sans leading-relaxed">
+            <div className="space-y-5 text-base sm:text-lg text-zinc-600 font-sans leading-relaxed">
               <p>
                 Azhar Shaikh & Associates (‘ASA’) is an ICSI Peer-Reviewed Practicing Company Secretary firm and 
                 Certified Trademark Agent practice in Pune, Maharashtra. We provide high-end legal, compliance, and governance advisory 
@@ -243,291 +234,137 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
               </p>
             </div>
 
-            {/* Secondary Visual: Team Photo + Overlaid "ASK A PARTNER" Callout Card */}
-            <div className="pt-2 relative">
-              
-              {/* Group Team Photo (image1 without watermark) */}
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-zinc-200/90 h-[280px] sm:h-[320px] bg-zinc-100">
-                <img 
-                  src="/team_unity.jpg" 
-                  alt="Azhar Shaikh & Associates Collaborative Governance & Advisory Team" 
-                  className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 hover:scale-102"
-                  loading="eager"
-                  decoding="sync"
-                />
-              </div>
-
-              {/* Overlaid Floating Callout Card (Exact Igual Design: Rounded-tl Leaf Corner) */}
-              <div className="relative -mt-16 sm:-mt-20 ml-4 sm:ml-8 max-w-[340px] sm:max-w-[360px] bg-white rounded-tl-[36px] rounded-tr-xl rounded-b-xl p-5 sm:p-6 shadow-2xl border border-zinc-200/80 z-20 space-y-3">
-                
-
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-[#09172e] leading-snug">
-                  We Provide CS Practice
-                </h3>
-
-                {/* Action Button: CALL US (phone number button removed per red line in image2) */}
-                <div className="pt-1">
-                  <a
-                    href={`tel:${FIRM_INFO.contact.phone1}`}
-                    className="inline-flex items-center gap-2 bg-[#001B41] hover:bg-[#002b66] text-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shadow-sm border border-white/10 group cursor-pointer"
-                  >
-                    <Phone size={13} className="text-[#b8967e] group-hover:scale-110 transition-transform" />
-                    <span>CALL US</span>
-                  </a>
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
 
         </div>
       </section>
 
-      {/* =========================================================================
-          SECTION 2: VISION & MISSION CARDS (Exact Igual Theme Cards from Image 1)
-         ========================================================================= */}
-      <section className="py-20 lg:py-24 bg-white border-y border-zinc-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          {/* Section Header */}
-          <div className="text-center max-w-5xl mx-auto space-y-3">
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[46px] font-normal text-[#001B41] leading-tight">
-              <span className="sm:whitespace-nowrap block">Strong Governance, Seamless Compliance,</span>
-              <span className="block mt-1 sm:mt-1.5">Sustainable Growth</span>
-            </h2>
-          </div>
 
-          {/* 2-Column Cards Grid (Exact Igual Card Style from Image 1) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            
-            {/* Card 1: VISION */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group">
-              
-              {/* Top Photo with Stacked Corner Badge */}
-              <div className="relative h-[260px] sm:h-[300px] lg:h-[340px] overflow-hidden bg-zinc-100">
-                <img 
-                  src="/vision_card.jpg" 
-                  alt="Azhar Shaikh & Associates Corporate Vision" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                  decoding="sync"
-                />
-
-                {/* Subtle dark gradient overlay at bottom for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-
-                {/* Stacked Corner Badge (Exact Igual Style from Image 1) */}
-                <div className="absolute bottom-4 right-6 bg-[#b8967e] text-white px-4 py-2 rounded-lg shadow-lg text-center leading-tight z-10 border border-white/20 select-none">
-                  <div className="text-[10px] font-mono font-bold tracking-widest uppercase">OUR</div>
-                  <div className="text-sm font-serif font-bold tracking-wider uppercase">VISION</div>
-                </div>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
-                <div className="space-y-2.5">
-                  <div className="text-xs font-sans font-semibold tracking-wider uppercase text-zinc-400">
-                    Vision, Emerging India
-                  </div>
-                  <h3 className="font-serif text-xl sm:text-2xl lg:text-[26px] font-normal text-[#09172e] leading-snug group-hover:text-[#b8967e] transition-colors">
-                    To attain global recognition and reputation as part of an emerging corporate India
-                  </h3>
-                </div>
-
-                {/* Action Link: LEARN MORE + */}
-                <div className="pt-2">
-                  <button 
-                    onClick={onNavigateTeam || (() => onOpenConsultation && onOpenConsultation("Corporate Vision"))}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold tracking-[0.18em] uppercase text-[#b8967e] hover:text-[#09172e] transition-colors cursor-pointer group/btn"
-                  >
-                    <span>LEARN MORE</span>
-                    <span className="text-sm transition-transform duration-300 group-hover/btn:translate-x-1">+</span>
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Card 2: MISSION */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group">
-              
-              {/* Top Photo with Stacked Corner Badge */}
-              <div className="relative h-[260px] sm:h-[300px] lg:h-[340px] overflow-hidden bg-zinc-100">
-                <img 
-                  src="/mission_card.jpg" 
-                  alt="Azhar Shaikh & Associates Corporate Mission" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                  decoding="sync"
-                />
-
-                {/* Subtle dark gradient overlay at bottom for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-
-                {/* Stacked Corner Badge (Exact Igual Style from Image 1) */}
-                <div className="absolute bottom-4 right-6 bg-[#b8967e] text-white px-4 py-2 rounded-lg shadow-lg text-center leading-tight z-10 border border-white/20 select-none">
-                  <div className="text-[10px] font-mono font-bold tracking-widest uppercase">OUR</div>
-                  <div className="text-sm font-serif font-bold tracking-wider uppercase">MISSION</div>
-                </div>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
-                <div className="space-y-2.5">
-                  <div className="text-xs font-sans font-semibold tracking-wider uppercase text-zinc-400">
-                    Mission, Governance & Compliance
-                  </div>
-                  <h3 className="font-serif text-xl sm:text-2xl lg:text-[26px] font-normal text-[#09172e] leading-snug group-hover:text-[#b8967e] transition-colors">
-                    To uphold utmost integrity & excellence for the attainment of corporate Governance and compliance of law of land
-                  </h3>
-                </div>
-
-                {/* Action Link: LEARN MORE + */}
-                <div className="pt-2">
-                  <button 
-                    onClick={onExploreServices || (() => onOpenConsultation && onOpenConsultation("Corporate Mission"))}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold tracking-[0.18em] uppercase text-[#b8967e] hover:text-[#09172e] transition-colors cursor-pointer group/btn"
-                  >
-                    <span>LEARN MORE</span>
-                    <span className="text-sm transition-transform duration-300 group-hover/btn:translate-x-1">+</span>
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Slider Pagination Indicator Dots (Exact Igual Style from Image 1) */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <span className="w-5 h-2 rounded-full bg-[#b8967e] transition-all" />
-            <span className="w-2 h-2 rounded-full bg-[#b8967e]/40 hover:bg-[#b8967e]/70 transition-all cursor-pointer" />
-          </div>
-
-        </div>
-      </section>
 
       {/* =========================================================================
           SECTION 3: "WHAT WE DO" / PRACTICE AREAS WITH SCALLOPED LADY JUSTICE
          ========================================================================= */}
-      <section id="services" className="py-20 lg:py-28 bg-[#fcfbf9] overflow-hidden relative">
+      <section id="services-overview" className="py-16 lg:py-20 bg-[#fcfbf9] overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
-            {/* Left Column: Practicing Company Secretary & Legal Advocate (Full Image 2, full container) */}
-            <div className="lg:col-span-4 relative h-[460px] sm:h-[520px] lg:h-[580px] rounded-3xl overflow-hidden shadow-2xl bg-[#001B41] border border-zinc-200/80">
+            {/* Left Column: Practicing Company Secretary & Legal Advocate (Height adjusted to match services box) */}
+            <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl bg-[#001B41] border border-zinc-200/80 min-h-[340px] h-[360px] sm:h-[400px] lg:h-full">
               <img 
                 src="/cs_advocate.png" 
                 alt="Practicing Company Secretary & Legal Advocate" 
-                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-102"
+                className="w-full h-full object-cover object-top sm:object-center transition-transform duration-700 hover:scale-102"
                 loading="eager"
                 decoding="sync"
               />
               
               {/* Subtle dark gradient overlay at bottom for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Right Column: Practice Areas Carousel */}
-            <div className="lg:col-span-8 space-y-8 pl-0 lg:pl-6">
+            <div className="lg:col-span-8 flex flex-col justify-between space-y-6 sm:space-y-7 pl-0 lg:pl-3">
               
-              {/* Top Header with Signature Two-Part Action Button */}
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-200/80 pb-6">
-                <div className="space-y-2">
-                  <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-[#001B41] tracking-tight">
-                    From Compliance to <br />
-                    <span className="font-serif italic text-[#b8967e]">Corporate Excellence</span>
+              {/* Top Header with Heading, 2-Line Subtitle & Signature Action Button */}
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-zinc-200/80 pb-6">
+                <div className="space-y-2 max-w-2xl sm:max-w-3xl">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-[42px] font-normal text-[#001B41] leading-tight tracking-tight">
+                    Services We <span className="font-serif italic text-[#b8967e]">Provide</span>
                   </h2>
+                  <p className="text-[17px] text-zinc-600 font-sans leading-relaxed">
+                    We, at Azhar Shaikh & Associates ('ASA'), offer full range of secretarial & legal services that are specifically designed to manage business compliances, to provide simple solutions to complicated business scenarios and to assist in decision making processes.
+                  </p>
                 </div>
 
-                {/* Signature Two-Part Action Button [ + | LEARN MORE ] */}
+                {/* Signature Two-Part Action Button [ + | KNOW MORE ] - Redirects to Services Page */}
                 <button
                   onClick={onExploreServices || (() => onOpenConsultation())}
-                  className="igual-btn shrink-0"
+                  className="igual-btn shrink-0 md:self-end mb-1"
+                  aria-label="Know more about our services"
                 >
                   <span className="igual-btn-icon">
                     +
                   </span>
                   <span className="igual-btn-text">
-                    LEARN MORE
+                    KNOW MORE
                   </span>
                 </button>
               </div>
 
-              {/* 9 Practice Area Cards Auto-Scrollable Carousel (Exact Design from Image 2 & sleek rounded-br corner from Image 1) */}
-              <div 
-                ref={carouselRef}
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-                className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-              >
-                {practiceCards.map((card, idx) => {
-                  const Icon = card.icon;
-                  return (
-                    <div 
-                      key={idx}
-                      onClick={() => {
-                        if (onSelectService) {
-                          const srv = SERVICES.find(s => s.id === card.id);
-                          if (srv) onSelectService(srv);
-                        } else {
-                          onOpenConsultation(card.title);
-                        }
-                      }}
-                      className="shrink-0 w-full sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] snap-start bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover:border-[#b8967e]/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group cursor-pointer relative"
-                    >
-                      {/* Top-Right Decorative Corner Accent (Exact Design from Image 2) */}
+              {/* Single Unified Joined Services Box with Sleek Faint Partition Lines */}
+              <div className="bg-white rounded-3xl border border-zinc-200/80 shadow-sm overflow-hidden mt-1 sm:mt-2 transition-all duration-300">
+                <div 
+                  ref={carouselRef}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                  className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                >
+                  {practiceCards.map((card, idx) => {
+                    const Icon = card.icon;
+                    return (
                       <div 
-                        className="absolute top-0 right-0 w-12 sm:w-14 h-20 sm:h-24 pointer-events-none rounded-tr-2xl rounded-bl-[44px] bg-gradient-to-l from-[#b8967e]/45 via-[#d4baa8]/25 to-transparent transition-all duration-300 group-hover:from-[#b8967e]/60 group-hover:via-[#d4baa8]/35 z-10" 
-                        aria-hidden="true"
-                      />
-
-                      {/* Top Content */}
-                      <div className="p-5 space-y-3 relative z-10">
-                        <div className="w-10 h-10 rounded-xl bg-[#f8f5f2] border border-[#b8967e]/30 flex items-center justify-center text-[#b8967e] group-hover:bg-[#b8967e] group-hover:text-white transition-colors">
-                          <Icon size={18} />
+                        key={idx}
+                        onClick={() => {
+                          if (onExploreServices) {
+                            onExploreServices();
+                          } else if (onSelectService) {
+                            const srv = SERVICES.find(s => s.id === card.id);
+                            if (srv) onSelectService(srv);
+                          } else {
+                            onOpenConsultation(card.title);
+                          }
+                        }}
+                        className="shrink-0 w-full sm:w-1/2 md:w-1/3 snap-start p-6 sm:p-7 border-r border-zinc-200/60 last:border-r-0 sleek-card-1px hover:shadow-[inset_0_0_0_1px_#b8967e] hover:bg-[#faf7f2] hover:z-10 transition-all duration-300 group cursor-pointer flex flex-col justify-start space-y-3.5 relative overflow-hidden first:rounded-l-3xl last:rounded-r-3xl"
+                      >
+                        {/* Top Section: Icon with Scale & Glow on Hover */}
+                        <div>
+                          <div className="w-11 h-11 rounded-xl bg-[#001B41] text-[#b8967e] border border-[#b8967e]/30 flex items-center justify-center group-hover:bg-[#b8967e] group-hover:text-white group-hover:border-[#b8967e] transition-all duration-300 shadow-xs group-hover:scale-110 group-hover:shadow-md">
+                            <Icon size={20} strokeWidth={1.75} />
+                          </div>
                         </div>
-                        <h3 className="font-serif text-base font-bold text-[#09172e] group-hover:text-[#b8967e] transition-colors line-clamp-1">
-                          {card.title}
-                        </h3>
-                        <p className="text-xs text-zinc-500 font-sans leading-relaxed line-clamp-3">
+
+                        {/* Title & Gold Accent Line */}
+                        <div className="space-y-2">
+                          <h3 className="font-serif text-base sm:text-[17px] font-bold text-[#001B41] group-hover:text-[#b8967e] transition-colors duration-300 leading-snug line-clamp-2 min-h-[44px] flex items-center">
+                            {card.title}
+                          </h3>
+                          <div className="w-6 h-[1.5px] bg-[#b8967e]/40 group-hover:w-14 group-hover:bg-[#b8967e] transition-all duration-300" />
+                        </div>
+
+                        {/* Description - Strictly 2 lines */}
+                        <p className="text-xs text-zinc-500 group-hover:text-zinc-700 font-sans leading-relaxed line-clamp-2 h-9 transition-colors duration-300">
                           {card.desc}
                         </p>
                       </div>
-
-                      {/* Bottom Photo */}
-                      <div className="h-32 w-full overflow-hidden border-t border-zinc-100">
-                        <img 
-                          src={card.image} 
-                          alt={card.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          loading="eager"
-                          decoding="sync"
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Bottom Carousel Navigation Controls (Exact Design from Image 2: Leaf-Symmetric Buttons) */}
-              <div className="flex items-center justify-end gap-2.5 pt-3">
+              {/* Bottom Carousel Navigation Controls - Directionally Animated Arrows (No Box) */}
+              <div className="flex items-center justify-end gap-6 pt-1">
                 <button
                   onClick={handlePrevPractice}
-                  className="w-12 h-11 bg-[#b8967e] hover:bg-[#a68269] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm hover:shadow-md active:scale-95 rounded-tl-[24px] rounded-br-[24px] rounded-tr-none rounded-bl-none"
+                  className="bg-transparent border-0 p-2 text-[#b8967e] hover:text-[#001B41] transition-colors cursor-pointer flex items-center justify-center focus:outline-none group/prev"
                   aria-label="Previous practice area"
                 >
-                  <ArrowLeft size={18} strokeWidth={1.75} />
+                  <ArrowLeft 
+                    size={30} 
+                    strokeWidth={2.2} 
+                    className="animate-arrow-left transition-transform duration-300 group-hover/prev:scale-110" 
+                  />
                 </button>
                 <button
                   onClick={handleNextPractice}
-                  className="w-12 h-11 bg-[#b8967e] hover:bg-[#a68269] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm hover:shadow-md active:scale-95 rounded-tr-[24px] rounded-bl-[24px] rounded-tl-none rounded-br-none"
+                  className="bg-transparent border-0 p-2 text-[#b8967e] hover:text-[#001B41] transition-colors cursor-pointer flex items-center justify-center focus:outline-none group/next"
                   aria-label="Next practice area"
                 >
-                  <ArrowRight size={18} strokeWidth={1.75} />
+                  <ArrowRight 
+                    size={30} 
+                    strokeWidth={2.2} 
+                    className="animate-arrow-right transition-transform duration-300 group-hover/next:scale-110" 
+                  />
                 </button>
               </div>
 
@@ -541,7 +378,10 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
       {/* =========================================================================
           SECTION 3.2: INDUSTRIES SECTION (Clientele & Industry Verticals)
          ========================================================================= */}
-      <IndustriesSection onOpenConsultation={onOpenConsultation} />
+      <IndustriesSection 
+        onOpenConsultation={onOpenConsultation} 
+        onNavigateServices={onExploreServices}
+      />
 
       {/* =========================================================================
           SECTION 3.5: CHARTERED ACCOUNTANT SERVICES CTA BANNER (Your Financial Goals. Our Expertise.)
@@ -557,9 +397,8 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto space-y-3">
 
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#001B41] tracking-tight">
-              Experiences That <br />
-              <span className="font-serif italic text-[#b8967e]">Speak for Us</span>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[42px] font-normal text-[#001B41] leading-tight tracking-tight">
+              What Clients <span className="font-serif italic text-[#b8967e]">Say</span>
             </h2>
 
             {/* Delicate Centered Accent Line (Exact Igual Theme Element) */}
@@ -614,7 +453,7 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
                   <div className="flex-1 relative space-y-5 pt-1 text-center md:text-left">
                     
                     {/* Testimonial Quote */}
-                    <p className="font-sans text-base sm:text-lg lg:text-[20px] text-zinc-700 leading-relaxed font-normal">
+                    <p className="font-serif italic text-base sm:text-lg lg:text-[20px] text-zinc-700 leading-relaxed font-normal">
                       "{current.quote}"
                     </p>
 

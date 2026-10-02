@@ -6,6 +6,7 @@ import { INDUSTRY_SECTORS } from "../data";
 
 interface IndustriesSectionProps {
   onOpenConsultation?: (topic?: string) => void;
+  onNavigateServices?: () => void;
 }
 
 const ICON_MAP: Record<string, any> = {
@@ -17,70 +18,78 @@ const ICON_MAP: Record<string, any> = {
   TrendingUp
 };
 
-export default function IndustriesSection({ onOpenConsultation }: IndustriesSectionProps) {
+export default function IndustriesSection({ onOpenConsultation, onNavigateServices }: IndustriesSectionProps) {
+  const handleItemClick = () => {
+    if (onNavigateServices) {
+      onNavigateServices();
+    } else {
+      const el = document.getElementById("services");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.hash = "services";
+      }
+    }
+  };
+
   return (
-    <section id="industries" className="py-20 lg:py-24 bg-[#faf8f5] border-t border-zinc-200/80 relative overflow-hidden scroll-mt-24">
+    <section id="industries" className="pt-20 lg:pt-24 pb-[92px] lg:pb-[110px] bg-white border-t border-zinc-200/80 relative overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14 sm:mb-16">
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#001B41] tracking-tight">
-            Governance Expertise <span className="font-serif italic text-[#b8967e]">Across Every Sector</span>
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto space-y-3 mb-16 sm:mb-20">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#001B41] leading-tight tracking-tight">
+            Industries We <span className="font-serif italic text-[#b8967e]">Serve</span>
           </h2>
 
-          <p className="text-zinc-600 font-sans text-sm sm:text-base leading-relaxed pt-1">
-            From high-growth tech disruptors to century-old manufacturing houses and BSE/NSE listed conglomerates, 
-            our secretarial and trademark counsel adapts to the nuances of every regulated industry.
+          <p className="text-zinc-600 font-sans text-sm sm:text-base leading-relaxed max-w-4xl mx-auto pt-1">
+            <span className="sm:block">From high-growth tech disruptors to century-old manufacturing houses and BSE/NSE listed conglomerates,</span>
+            <span className="sm:block">our secretarial and trademark counsel adapts to the nuances of every regulated industry.</span>
           </p>
 
           <div className="w-16 h-[1.5px] bg-[#b8967e]/60 mx-auto mt-4" />
         </div>
 
-        {/* Industry Verticals 6-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Industry Verticals - Elegant Unboxed Editorial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 lg:gap-x-14 gap-y-12 lg:gap-y-16">
           {INDUSTRY_SECTORS.map((sector) => {
             const Icon = ICON_MAP[sector.iconName] || Factory;
 
             return (
               <div
                 key={sector.id}
-                onClick={() => onOpenConsultation?.(`${sector.title} Advisory`)}
-                className="bg-white border border-zinc-200/80 hover:border-[#b8967e]/60 rounded-2xl p-7 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-5 group cursor-pointer relative overflow-hidden"
+                onClick={handleItemClick}
+                className="group cursor-pointer relative pt-7 border-t border-zinc-200/90 transition-all duration-300 flex flex-col justify-between text-center"
               >
-                {/* Subtle Luxury Corner Accent on Hover */}
+                {/* Sleek Golden Accent Line Expanding on Hover */}
                 <div 
-                  className="absolute top-0 right-0 w-12 h-16 pointer-events-none rounded-tr-2xl rounded-bl-[36px] bg-gradient-to-l from-[#b8967e]/35 via-[#d4baa8]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                  className="absolute top-0 left-0 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-[#b8967e] via-[#d4baa8] to-[#b8967e] transition-all duration-500 ease-out" 
                   aria-hidden="true"
                 />
 
-                <div className="space-y-4 relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-[#001B41] text-[#b8967e] border border-[#b8967e]/30 flex items-center justify-center group-hover:bg-[#b8967e] group-hover:text-white transition-colors duration-300 shadow-md">
-                    <Icon size={22} strokeWidth={1.8} />
+                <div>
+                  {/* Top Bar: Centered Minimal Line Icon */}
+                  <div className="flex justify-center pb-2 text-[#001B41] group-hover:text-[#b8967e] group-hover:scale-110 transition-all duration-300">
+                    <Icon size={24} strokeWidth={1.6} />
                   </div>
 
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-[#09172e] group-hover:text-[#b8967e] transition-colors">
-                      {sector.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-zinc-600 font-sans mt-2.5 leading-relaxed">
-                      {sector.description}
-                    </p>
-                  </div>
-                </div>
+                  {/* Industry Name */}
+                  <h3 className="font-serif text-xl sm:text-[22px] font-bold text-[#001B41] group-hover:text-[#b8967e] transition-colors duration-300 mt-2.5 leading-snug tracking-tight">
+                    {sector.title}
+                  </h3>
 
-                <div className="pt-4 border-t border-zinc-100 space-y-2 relative z-10">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#9a7862] font-semibold block">
-                    Domain Clusters:
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {sector.examples.map((ex, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[11px] font-sans px-2.5 py-1 bg-[#faf8f5] border border-zinc-200/70 rounded-md text-zinc-700 font-medium group-hover:border-[#b8967e]/30 transition-colors"
-                      >
-                        {ex}
-                      </span>
-                    ))}
-                  </div>
+                  {/* Two Lines from Content as given */}
+                  <p 
+                    className="text-zinc-600 font-sans text-sm sm:text-[14px] leading-relaxed mt-2.5 line-clamp-2 group-hover:text-zinc-800 transition-colors max-w-sm mx-auto"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden"
+                    }}
+                  >
+                    {sector.description}
+                  </p>
                 </div>
               </div>
             );

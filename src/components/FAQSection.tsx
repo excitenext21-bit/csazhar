@@ -7,6 +7,7 @@ import {
 interface FAQSectionProps {
   onOpenConsultation?: (topic?: string) => void;
   onNavigateContact?: () => void;
+  onNavigateServices?: () => void;
 }
 
 export const FAQS = [
@@ -42,7 +43,7 @@ export const FAQS = [
   }
 ];
 
-export default function FAQSection({ onOpenConsultation, onNavigateContact }: FAQSectionProps) {
+export default function FAQSection({ onOpenConsultation, onNavigateContact, onNavigateServices }: FAQSectionProps) {
   // Default to first item expanded as shown in reference design
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -75,7 +76,7 @@ export default function FAQSection({ onOpenConsultation, onNavigateContact }: FA
           <div className="lg:col-span-5 space-y-6">
 
             {/* Main Title */}
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#09172e] leading-[1.15]">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[42px] font-bold tracking-tight text-[#001B41] leading-[1.15]">
               Got Questions?<br />
               <span className="text-[#b8967e]">We've Got Answers.</span>
             </h2>
@@ -164,7 +165,31 @@ export default function FAQSection({ onOpenConsultation, onNavigateContact }: FA
                     {isOpen && (
                       <div className="pt-3.5 pl-14 pr-4 sm:pr-8 animate-in fade-in slide-in-from-top-1 duration-200">
                         <p className="text-xs sm:text-sm text-zinc-600 font-sans leading-relaxed">
-                          {faq.answer}
+                          {faq.id === "services" ? (
+                            <>
+                              We offer a comprehensive range of{" "}
+                              <a
+                                href="#services"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  if (onNavigateServices) {
+                                    onNavigateServices();
+                                  } else {
+                                    const el = document.getElementById("services-overview") || document.getElementById("services");
+                                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                                  }
+                                }}
+                                className="text-[#b8967e] hover:text-[#9a7862] font-semibold underline underline-offset-4 decoration-[#b8967e]/70 hover:decoration-[#9a7862] transition-colors cursor-pointer"
+                                title="Explore our comprehensive services and practice areas"
+                              >
+                                services
+                              </a>{" "}
+                              including audit & assurance, taxation, GST, accounting & bookkeeping, business advisory, and compliance services for individuals, startups and businesses of all sizes.
+                            </>
+                          ) : (
+                            faq.answer
+                          )}
                         </p>
                       </div>
                     )}

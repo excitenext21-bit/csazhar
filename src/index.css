@@ -2,8 +2,8 @@
 
 @theme {
   --font-sans: "DM Sans", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Marcellus", "Playfair Display", "Cinzel", ui-serif, Georgia, serif;
-  --font-display: "Cinzel", "Marcellus", serif;
+  --font-serif: "Playfair Display", "Marcellus", "Cinzel", ui-serif, Georgia, serif;
+  --font-display: "Playfair Display", "Cinzel", "Marcellus", serif;
 
   --color-gold-base: #b8967e;
   --color-gold-dark: #9a7862;
@@ -68,6 +68,17 @@
   font-family: var(--font-serif);
   letter-spacing: -0.015em;
   line-height: 1.15;
+}
+
+/* Sleek 1px hover effect around box for services cards */
+.sleek-card-1px {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.sleek-card-1px:hover {
+  box-shadow: inset 0 0 0 1px #b8967e;
+  background-color: #faf7f2;
 }
 
 /* Signature Igual Two-Part Action Button [ + | ACTION ] */
@@ -234,3 +245,106 @@
 .animate-pulse-subtle {
   animation: pulse-subtle 8s infinite ease-in-out;
 }
+
+/* Directional Carousel Navigation Arrow Animations */
+@keyframes arrowSlideLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-7px);
+  }
+}
+
+@keyframes arrowSlideRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+}
+
+.animate-arrow-left {
+  animation: arrowSlideLeft 1.4s ease-in-out infinite;
+}
+
+.animate-arrow-right {
+  animation: arrowSlideRight 1.4s ease-in-out infinite;
+}
+
+/* Subtle Hero Background Aesthetic Cinematic Animations */
+@keyframes heroSlowZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate(-6px, -4px);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes heroGlow1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate(30px, -25px) scale(1.18);
+    opacity: 0.22;
+  }
+}
+
+@keyframes heroGlow2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.15);
+    opacity: 0.28;
+  }
+}
+
+@keyframes heroSheen {
+  0%, 100% {
+    transform: translateY(-20px) rotate(12deg);
+    opacity: 0.03;
+  }
+  50% {
+    transform: translateY(20px) rotate(14deg);
+    opacity: 0.08;
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.09;
+  }
+}
+
+.animate-hero-slow-zoom {
+  animation: heroSlowZoom 22s ease-in-out infinite alternate;
+}
+
+.animate-hero-glow-1 {
+  animation: heroGlow1 16s ease-in-out infinite alternate;
+}
+
+.animate-hero-glow-2 {
+  animation: heroGlow2 20s ease-in-out infinite alternate;
+}
+
+.animate-hero-sheen {
+  animation: heroSheen 18s ease-in-out infinite alternate;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 10s ease-in-out infinite alternate;
+}
+

@@ -63,7 +63,7 @@ export default function PracticeAreas({ onSelectService, onOpenConsultation }: P
           </div>
 
           <h2 className="section-title text-3xl sm:text-5xl text-white">
-            From Compliance to <span className="italic font-serif text-[#b8967e]">Corporate Excellence</span>
+            Services We <span className="italic font-serif text-[#b8967e]">Provide</span>
           </h2>
 
           <p className="text-zinc-400 font-sans text-sm sm:text-base leading-relaxed">

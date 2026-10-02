@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AboutFirm from "./components/AboutFirm";
+import VisionMissionSection from "./components/VisionMissionSection";
 import PracticeAreas from "./components/PracticeAreas";
 import LeadershipTeam from "./components/LeadershipTeam";
 import ClienteleSectors from "./components/ClienteleSectors";
@@ -102,33 +103,29 @@ export default function App() {
             <AboutFirm 
               onNavigateTeam={() => handleNavigate("about-team")}
               onOpenConsultation={(topic) => handleOpenConsultation(topic || "Firm Retainer Advisory")}
-              onExploreServices={() => {
-                const el = document.getElementById("services");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-                else handleNavigate("services");
+              onExploreServices={() => handleNavigate("services")}
+              onSelectService={(srv) => {
+                setSelectedService(srv);
+                handleNavigate("services");
               }}
-              onSelectService={(srv) => setSelectedService(srv)}
             />
 
             {/* Frequently Asked Questions Section */}
             <FAQSection 
               onOpenConsultation={(topic) => handleOpenConsultation(topic || "FAQ Support Inquiry")}
               onNavigateContact={() => handleNavigate("contact")}
+              onNavigateServices={() => handleNavigate("services")}
             />
           </>
         )}
 
-        {/* Dedicated Page: About Firm Profile (Exact Igual About Us Page Structure) */}
+        {/* Dedicated Page: Why Choose Us (Our Purpose section) */}
         {(activePage === "about" || activePage === "about-profile") && (
-          <div className="pt-24 sm:pt-32">
-            <AboutFirm 
+          <div className="pt-24 sm:pt-28 pb-6">
+            <VisionMissionSection 
               onNavigateTeam={() => handleNavigate("about-team")}
-              onOpenConsultation={(topic) => handleOpenConsultation(topic || "Firm Retainer Advisory")}
               onExploreServices={() => handleNavigate("services")}
-              onSelectService={(srv) => setSelectedService(srv)}
-            />
-            <LeadershipTeam 
-              onOpenConsultation={(topic) => handleOpenConsultation(topic)}
+              onOpenConsultation={(topic) => handleOpenConsultation(topic || "Corporate Vision")}
             />
           </div>
         )}
@@ -162,6 +159,7 @@ export default function App() {
           <div className="pt-28 sm:pt-36">
             <ClienteleSectors 
               onOpenConsultation={() => handleOpenConsultation("Industry Sector Engagement")}
+              onNavigateServices={() => handleNavigate("services")}
             />
           </div>
         )}
@@ -181,6 +179,7 @@ export default function App() {
             <FAQSection 
               onOpenConsultation={(topic) => handleOpenConsultation(topic || "FAQ Support Inquiry")}
               onNavigateContact={() => handleNavigate("contact")}
+              onNavigateServices={() => handleNavigate("services")}
             />
           </div>
         )}

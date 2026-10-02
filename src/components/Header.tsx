@@ -73,35 +73,29 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
   return (
     <header className="w-full fixed top-0 left-0 z-50 transition-all duration-300">
       
-      {/* Topbar: email | address | ICSI Disclaimer */}
+      {/* Topbar: email | phone | ICSI Disclaimer */}
       <div className={`w-full bg-[#001B41] text-zinc-300 text-xs border-b border-white/10 transition-all duration-300 ${isScrolled ? "h-0 opacity-0 overflow-hidden py-0" : "py-2 px-4 sm:px-8"}`}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-end gap-4">
           
-          {/* Left subtle indicator */}
-          <div className="flex items-center gap-2 text-[11px] font-mono text-zinc-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#b8967e]" />
-            <span className="tracking-wider uppercase">{FIRM_INFO.peerReviewStatus}</span>
-          </div>
-
-          {/* Right items: email | address | ICSI Disclaimer */}
-          <div className="flex items-center gap-4 text-[11px] font-sans">
+          {/* Right items: email | phone | ICSI Disclaimer */}
+          <div className="flex items-center gap-3 sm:gap-4 text-[11px] font-sans">
             <span className="flex items-center gap-1.5 text-zinc-300 hover:text-white transition-colors">
               <Mail size={13} className="text-[#b8967e]" />
               <a href={`mailto:${FIRM_INFO.contact.emailPrimary}`}>{FIRM_INFO.contact.emailPrimary}</a>
             </span>
 
-            <span className="hidden sm:inline-block text-white/20">|</span>
+            <span className="text-white/20">|</span>
 
-            <span className="hidden sm:flex items-center gap-1.5 text-zinc-300">
-              <MapPin size={13} className="text-[#b8967e]" />
-              <span>Pune, Maharashtra, India</span>
+            <span className="flex items-center gap-1.5 text-zinc-300 hover:text-white transition-colors">
+              <Phone size={13} className="text-[#b8967e]" />
+              <a href={`tel:${FIRM_INFO.contact.phone1.replace(/\s+/g, '')}`}>{FIRM_INFO.contact.phone1}</a>
             </span>
 
             <span className="text-white/20">|</span>
 
             <button 
               onClick={() => onNavigate("disclaimer")}
-              className="text-zinc-400 hover:text-[#b8967e] transition-colors underline-offset-2 hover:underline"
+              className="text-zinc-400 hover:text-[#b8967e] transition-colors underline-offset-2 hover:underline cursor-pointer"
             >
               ICSI Disclaimer
             </button>
@@ -135,35 +129,44 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
             <div className="hidden lg:block h-8 w-px bg-white/15 mx-4 xl:mx-6" />
           </div>
 
-          {/* Desktop Navigation Links: Home | About Us | Services | Industries | Careers | Contact Us */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+          {/* Desktop Navigation Links: Home | About Us | Services | Industries | FAQ */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-3">
             
-            {/* 1. HOME - Distinct dark pill button as in reference image */}
+            {/* 1. HOME - Pure text nav link without box */}
             <button 
               onClick={() => onNavigate("home")}
-              className={`px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase transition-all rounded-lg flex items-center justify-center ${
+              className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors relative flex items-center justify-center cursor-pointer ${
                 activePage === "home" 
-                  ? "bg-[#2b2724] text-white border border-[#524438] shadow-sm font-bold" 
-                  : "text-zinc-200 hover:text-white hover:bg-white/5"
+                  ? "text-[#b8967e]" 
+                  : "text-zinc-200 hover:text-[#b8967e]"
               }`}
             >
               <span>HOME</span>
+              {activePage === "home" && (
+                <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b8967e] rounded-full" />
+              )}
             </button>
 
-            {/* 2. ABOUT US Dropdown - 2-line layout as in reference image */}
+            {/* 2. ABOUT US Dropdown - Pure text nav link without box */}
             <div 
               className="relative"
               onMouseEnter={handleAboutMouseEnter}
               onMouseLeave={handleAboutMouseLeave}
             >
-              <a 
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="px-3.5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-lg flex items-center gap-1 group text-zinc-200 hover:text-white hover:bg-white/5 cursor-pointer"
+              <button 
+                onClick={() => onNavigate("about-profile")}
+                className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors relative flex items-center gap-1 group cursor-pointer ${
+                  activePage === "about" || activePage === "about-profile" || activePage === "about-team" 
+                    ? "text-[#b8967e]" 
+                    : "text-zinc-200 hover:text-[#b8967e]"
+                }`}
               >
                 <span>ABOUT US</span>
-                <ChevronDown size={12} className={`transition-transform duration-200 ${isAboutDropdownOpen ? "rotate-180 text-[#b8967e]" : "text-zinc-400 group-hover:text-white"}`} />
-              </a>
+                <ChevronDown size={12} className={`transition-transform duration-200 ${isAboutDropdownOpen ? "rotate-180 text-[#b8967e]" : "text-zinc-400 group-hover:text-[#b8967e]"}`} />
+                {(activePage === "about" || activePage === "about-profile" || activePage === "about-team") && (
+                  <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b8967e] rounded-full" />
+                )}
+              </button>
 
               {isAboutDropdownOpen && (
                 <div 
@@ -171,40 +174,44 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
                   onMouseEnter={handleAboutMouseEnter}
                   onMouseLeave={handleAboutMouseLeave}
                 >
-                  <a 
-                    href="#"
-                    onClick={(e) => { e.preventDefault(); setIsAboutDropdownOpen(false); }}
+                  <button 
+                    onClick={() => { onNavigate("about-profile"); setIsAboutDropdownOpen(false); }}
                     className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-[#15233a] text-zinc-200 hover:text-[#b8967e] text-xs font-medium transition-colors flex items-center justify-between group cursor-pointer"
                   >
                     <span>Why Choose Us</span>
                     <ArrowRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#b8967e]" />
-                  </a>
-                  <a 
-                    href="#"
-                    onClick={(e) => { e.preventDefault(); setIsAboutDropdownOpen(false); }}
+                  </button>
+                  <button 
+                    onClick={() => { onNavigate("about-team"); setIsAboutDropdownOpen(false); }}
                     className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-[#15233a] text-zinc-200 hover:text-[#b8967e] text-xs font-medium transition-colors flex items-center justify-between group cursor-pointer"
                   >
                     <span>Our Leadership & Team</span>
                     <ArrowRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#b8967e]" />
-                  </a>
+                  </button>
                 </div>
               )}
             </div>
 
-            {/* 3. SERVICES Dropdown - Giving ONLY the sub-navigations names */}
+            {/* 3. SERVICES Dropdown - Pure text nav link without box */}
             <div 
               className="relative"
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
             >
-              <a 
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="px-3.5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-lg flex items-center gap-1 group text-zinc-200 hover:text-white hover:bg-white/5 cursor-pointer"
+              <button 
+                onClick={() => onNavigate("services")}
+                className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors relative flex items-center gap-1 group cursor-pointer ${
+                  activePage === "services" 
+                    ? "text-[#b8967e]" 
+                    : "text-zinc-200 hover:text-[#b8967e]"
+                }`}
               >
                 <span>SERVICES</span>
-                <ChevronDown size={12} className={`transition-transform duration-200 ${isServicesDropdownOpen ? "rotate-180 text-[#b8967e]" : "text-zinc-400 group-hover:text-white"}`} />
-              </a>
+                <ChevronDown size={12} className={`transition-transform duration-200 ${isServicesDropdownOpen ? "rotate-180 text-[#b8967e]" : "text-zinc-400 group-hover:text-[#b8967e]"}`} />
+                {activePage === "services" && (
+                  <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b8967e] rounded-full" />
+                )}
+              </button>
 
               {isServicesDropdownOpen && (
                 <div 
@@ -214,11 +221,10 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
                 >
                   <div className="space-y-0.5">
                     {NAV_SERVICES.map((srv) => (
-                      <a
+                      <button
                         key={srv.id}
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
+                        onClick={() => {
+                          onNavigate("services", srv.id);
                           setIsServicesDropdownOpen(false);
                         }}
                         className="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-[#162740] text-zinc-200 hover:text-[#b8967e] text-xs font-medium transition-all flex items-center justify-between group cursor-pointer border border-transparent hover:border-[#b8967e]/30"
@@ -227,30 +233,42 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
                           {srv.title}
                         </span>
                         <ChevronRight size={13} className="text-[#b8967e] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>
               )}
             </div>
 
-            {/* 4. INDUSTRIES */}
-            <a 
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="px-3.5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-lg flex items-center justify-center text-zinc-200 hover:text-white hover:bg-white/5 cursor-pointer"
+            {/* 4. INDUSTRIES - Pure text nav link without box */}
+            <button 
+              onClick={() => onNavigate("industries")}
+              className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors relative flex items-center justify-center cursor-pointer ${
+                activePage === "industries" || activePage === "clientele" 
+                  ? "text-[#b8967e]" 
+                  : "text-zinc-200 hover:text-[#b8967e]"
+              }`}
             >
               <span>INDUSTRIES</span>
-            </a>
+              {(activePage === "industries" || activePage === "clientele") && (
+                <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b8967e] rounded-full" />
+              )}
+            </button>
 
-            {/* 5. FAQ */}
-            <a 
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="px-3.5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-lg flex items-center justify-center text-zinc-200 hover:text-white hover:bg-white/5 cursor-pointer"
+            {/* 5. FAQ - Pure text nav link without box */}
+            <button 
+              onClick={() => onNavigate("faq")}
+              className={`px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors relative flex items-center justify-center cursor-pointer ${
+                activePage === "faq" 
+                  ? "text-[#b8967e]" 
+                  : "text-zinc-200 hover:text-[#b8967e]"
+              }`}
             >
               <span>FAQ</span>
-            </a>
+              {activePage === "faq" && (
+                <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b8967e] rounded-full" />
+              )}
+            </button>
 
           </div>
 
@@ -343,20 +361,18 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
 
                 {isMobileAboutOpen && (
                   <div className="pl-3 py-1 space-y-1.5 border-l border-[#b8967e]/30 ml-2 mt-1">
-                    <a
-                      href="#"
-                      onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}
-                      className="text-left py-1 text-xs text-zinc-300 block hover:text-[#b8967e] cursor-pointer"
+                    <button
+                      onClick={() => { onNavigate("about-profile"); setIsMobileMenuOpen(false); }}
+                      className="text-left py-1 text-xs text-zinc-300 block hover:text-[#b8967e]"
                     >
                       • Why Choose Us
-                    </a>
-                    <a
-                      href="#"
-                      onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}
-                      className="text-left py-1 text-xs text-zinc-300 block hover:text-[#b8967e] cursor-pointer"
+                    </button>
+                    <button
+                      onClick={() => { onNavigate("about-team"); setIsMobileMenuOpen(false); }}
+                      className="text-left py-1 text-xs text-zinc-300 block hover:text-[#b8967e]"
                     >
                       • Our Leadership & Team
-                    </a>
+                    </button>
                   </div>
                 )}
               </div>
@@ -367,46 +383,45 @@ export default function Header({ activePage, onNavigate, onOpenConsultation }: H
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                   className="w-full flex items-center justify-between py-1.5 text-sm font-semibold text-zinc-200 uppercase"
                 >
-                  <span>Services</span>
+                  <span className={activePage === "services" ? "text-[#b8967e]" : ""}>
+                    Services
+                  </span>
                   <ChevronDown size={16} className={`transition-transform text-[#b8967e] ${isMobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
 
                 {isMobileServicesOpen && (
                   <div className="pl-3 py-1.5 space-y-1 border-l border-[#b8967e]/30 ml-2 mt-1">
                     {NAV_SERVICES.map((srv) => (
-                      <a
+                      <button
                         key={srv.id}
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
+                        onClick={() => {
+                          onNavigate("services", srv.id);
                           setIsMobileMenuOpen(false);
                         }}
-                        className="w-full text-left py-1.5 px-2 text-xs text-zinc-300 hover:text-[#b8967e] hover:bg-white/5 rounded-lg block transition-colors cursor-pointer"
+                        className="w-full text-left py-1.5 px-2 text-xs text-zinc-300 hover:text-[#b8967e] hover:bg-white/5 rounded-lg block transition-colors"
                       >
                         • {srv.title}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 )}
               </div>
 
               {/* 4. Mobile Industries */}
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}
-                className="text-left py-2 text-sm font-semibold uppercase border-t border-white/5 text-zinc-200 hover:text-[#b8967e] block cursor-pointer"
+              <button
+                onClick={() => { onNavigate("industries"); setIsMobileMenuOpen(false); }}
+                className={`text-left py-2 text-sm font-semibold uppercase border-t border-white/5 ${activePage === "industries" || activePage === "clientele" ? "text-[#b8967e]" : "text-zinc-200"}`}
               >
                 Industries
-              </a>
+              </button>
 
               {/* 5. Mobile FAQ */}
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}
-                className="text-left py-2 text-sm font-semibold uppercase border-t border-white/5 text-zinc-200 hover:text-[#b8967e] block cursor-pointer"
+              <button
+                onClick={() => { onNavigate("faq"); setIsMobileMenuOpen(false); }}
+                className={`text-left py-2 text-sm font-semibold uppercase border-t border-white/5 ${activePage === "faq" ? "text-[#b8967e]" : "text-zinc-200"}`}
               >
                 FAQ
-              </a>
+              </button>
             </div>
 
             {/* Mobile Contact & Action Button: CONNECT US */}

@@ -41,33 +41,31 @@ export default function Footer({ onNavigate, onSelectService, onOpenConsultation
 
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pl-12 sm:pl-20 lg:pl-24">
           
-          {/* Left Title Area */}
-          <div className="space-y-3 max-w-xl">
-
-            {/* Headline */}
-            <h3 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal leading-[1.2] text-white tracking-tight">
-              Let's Get Started With Us, Further<br />
-              <span className="text-white">Info & Support Team</span>
+          {/* Left Title Area - Single Line */}
+          <div className="flex-1 min-w-0 pr-4">
+            <h3 className="font-serif text-[30px] font-normal leading-normal text-white tracking-tight whitespace-nowrap">
+              Let's Get Started With Us
             </h3>
           </div>
 
-          {/* Right Luxury Leaf-Shaped Phone Card */}
+          {/* Right Luxury Leaf-Shaped Phone Card: Box Size Decreased by 15% & Made Sleek */}
           <div className="w-full sm:w-auto shrink-0">
             <a 
               href={`tel:${FIRM_INFO.contact.phone1}`}
-              className="group block relative rounded-tl-[44px] rounded-br-[44px] rounded-tr-xl rounded-bl-xl overflow-hidden px-8 sm:px-12 py-7 sm:py-8 transition-transform duration-300 hover:scale-[1.02] shadow-2xl"
+              className="group block relative rounded-tl-[28px] rounded-br-[28px] rounded-tr-md rounded-bl-md overflow-hidden px-5 sm:px-7 py-3 sm:py-3.5 transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl hover:shadow-[#b8967e]/15 border border-[#b8967e]/40 hover:border-[#b8967e]/80"
               style={{
-                background: "linear-gradient(135deg, #b8967e 0%, #432a1c 45%, #001B41 100%)",
+                background: "linear-gradient(135deg, rgba(184, 150, 126, 0.95) 0%, rgba(67, 42, 28, 0.9) 45%, rgba(0, 27, 65, 0.95) 100%)",
               }}
             >
               {/* Subtle inner highlight glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 pointer-events-none" />
 
-              <div className="relative z-10 space-y-1">
-                <div className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal tracking-wide group-hover:text-[#f8f5f2] transition-colors whitespace-nowrap">
+              <div className="relative z-10 space-y-0.5">
+                {/* Phone Number: Clean Sans-Serif font style exactly matching Image 1 */}
+                <div className="font-sans text-[20px] sm:text-[25px] lg:text-[25px] text-white font-medium tracking-wide group-hover:text-[#f8f5f2] transition-colors whitespace-nowrap leading-tight">
                   {FIRM_INFO.contact.phone1}
                 </div>
-                <div className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.22em] text-[#dfcdbf] font-bold">
+                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.24em] text-[#dfcdbf] font-bold">
                   FEEL FREE TO CALL US
                 </div>
               </div>
@@ -163,44 +161,40 @@ export default function Footer({ onNavigate, onSelectService, onOpenConsultation
                 </button>
               </li>
               <li>
-                <a 
-                  href="#"
-                  onClick={(e) => e.preventDefault()} 
+                <button 
+                  onClick={() => onNavigate("about-profile")} 
                   className="hover:text-[#b8967e] transition-colors flex items-center gap-2 group cursor-pointer"
                 >
                   <ChevronRight size={13} className="text-[#b8967e] transition-transform group-hover:translate-x-1" />
                   <span>About Us</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="#"
-                  onClick={(e) => e.preventDefault()} 
+                <button 
+                  onClick={() => onNavigate("services")} 
                   className="hover:text-[#b8967e] transition-colors flex items-center gap-2 group cursor-pointer"
                 >
                   <ChevronRight size={13} className="text-[#b8967e] transition-transform group-hover:translate-x-1" />
                   <span>Services</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="#"
-                  onClick={(e) => e.preventDefault()} 
+                <button 
+                  onClick={() => onNavigate("industries")} 
                   className="hover:text-[#b8967e] transition-colors flex items-center gap-2 group cursor-pointer"
                 >
                   <ChevronRight size={13} className="text-[#b8967e] transition-transform group-hover:translate-x-1" />
                   <span>Industries</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="#"
-                  onClick={(e) => e.preventDefault()} 
+                <button 
+                  onClick={() => onNavigate("faq")} 
                   className="hover:text-[#b8967e] transition-colors flex items-center gap-2 group cursor-pointer"
                 >
                   <ChevronRight size={13} className="text-[#b8967e] transition-transform group-hover:translate-x-1" />
                   <span>FAQ</span>
-                </a>
+                </button>
               </li>
               <li>
                 <button 
