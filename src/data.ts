@@ -40,29 +40,68 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "business-setup-and-closure-services",
     title: "Business Setup & Closure Services",
-    shortDesc: "End-to-end incorporation of Private/Public companies, Section 8, OPC, foreign subsidiaries, and structured fast-track entity exit.",
+    shortDesc: "End-to-end incorporation of Public/Private companies, Section 8, OPC, foreign subsidiaries, and structured entity closure & strike-off.",
     category: "Corporate Law",
     iconName: "Building2",
-    statutoryFramework: "Companies Act, 2013 | SPICe+ (INC-32) | Section 248 Strike-Off",
+    statutoryFramework: "Companies Act, 2013 | SPICe+ (INC-32) | Section 248 Strike-Off | NCLT & RoC",
     subServices: [
-      "Private Limited Company Incorporation",
-      "Public Limited Company Incorporation",
-      "Section 8 (Non-Profit / NGO) Company",
-      "One Person Company (OPC) Registration",
-      "Foreign Subsidiaries & WOS Setup",
-      "Fast Track Exit (FTE) & Company Strike-Off",
-      "MoA, AoA & Promoters' Charters"
+      "Incorporation of Public & Private Limited Companies",
+      "Section 8 (Non-Profit Organisation) Registration",
+      "One Person Company (OPC) Incorporation",
+      "Wholly-Owned Subsidiaries Registration",
+      "Conversion of Business into Company/LLP",
+      "Branch / Liaison / Project Offices Setup",
+      "Amalgamation / Merger Schemes",
+      "Voluntary & Compulsory Winding Up of Companies",
+      "Striking of Name from MCA (Section 248)"
     ],
     keyOfferings: [
-      "Incorporation of Private Limited and Public Limited Companies",
-      "Incorporation of Section 8 (Non-Profit / Charitable) Organizations",
-      "One Person Company (OPC) Registration and Conversion",
-      "Setting up Wholly-Owned Subsidiaries (WOS) for Foreign Entities in India",
-      "Conversion of existing Business Entities (Proprietorship / Partnership) into Company / LLP",
-      "Fast Track Exit (FTE) and Voluntary Winding-Up under Section 248 of the Companies Act",
-      "Drafting MoA, AoA, Promoters' Agreements, and Shareholder Charters"
+      "Incorporation of Public and Private Limited Companies including Company limited by Shares or by guarantee",
+      "Incorporation of Section 8 (Non-profit organisation)",
+      "Incorporation of One Person Company (OPC)",
+      "Registering of wholly owned subsidiaries",
+      "Conversion of existing business entities into Company/LLP",
+      "Registration of Partnership Firm",
+      "Registration of Branch Offices / Liaison Offices / Project Offices of Foreign Company in India",
+      "Registration of Trust",
+      "Establishment of entity in Free Trade Zone / SEZ",
+      "Amalgamation / Merger",
+      "Winding up of Companies (Voluntary and Compulsory)",
+      "Acting as Voluntary Liquidator in case of voluntary winding up",
+      "Striking of name of the Company from Ministry of Corporate Affairs",
+      "Closure of Branch Office / Liaison Offices / Project Offices",
+      "Liaison for Winding up with office of Judicial and Quasi Judicial Authorities, including NCLT, RD, RoC, and Official Liquidator"
     ],
-    fullDesc: "Azhar Shaikh & Associates advises domestic entrepreneurs, multinational conglomerates, and non-resident investors on choosing the optimal corporate vehicle in India. From name reservation, drafting customized Articles of Association (AoA) to post-incorporation statutory commencement (INC-20A), our firm delivers seamless turnaround. For non-operating entities, we handle official strike-off and liquidation minimizing promoter liability."
+    sections: [
+      {
+        heading: "BUSINESS SET UP SERVICES",
+        intro: "Full-range business formation and statutory establishment in India:",
+        items: [
+          "Incorporation of Public and Private Limited Companies including Company limited by Shares or by guarantee",
+          "Incorporation of Section 8 (Non-profit organisation)",
+          "Incorporation of One Person Company (OPC)",
+          "Registering of wholly owned subsidiaries",
+          "Conversion of existing business entities into Company/LLP",
+          "Registration of Partnership Firm",
+          "Registration of Branch Offices / Liaison Offices / Project Offices of Foreign Company in India",
+          "Registration of Trust",
+          "Establishment of entity in Free Trade Zone / SEZ"
+        ]
+      },
+      {
+        heading: "CLOSURE / EXIT OF BUSINESS ENTITY",
+        intro: "Structured legal exit, dissolution, and voluntary strike-off solutions:",
+        items: [
+          "Amalgamation / Merger",
+          "Winding up of Companies (Voluntary and Compulsory)",
+          "Acting as Voluntary Liquidator in case of voluntary winding up",
+          "Striking of name of the Company from Ministry of Corporate Affairs",
+          "Closure of Branch Office / Liaison Offices / Project Offices",
+          "Liaison for Winding up with office of Judicial and Quasi Judicial Authorities, including National Company Law Tribunal, Regional Director, Registrar of Companies and Official Liquidator"
+        ]
+      }
+    ],
+    fullDesc: "We offer a full range of business setup and structured corporate exit services designed to manage business compliances, establish optimal legal entities, and provide seamless winding-up or strike-off solutions before the MCA, RoC, RD, and NCLT authorities."
   },
   {
     id: "limited-liability-partnership",
@@ -70,51 +109,127 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Structuring, incorporation, drafting tailored LLP agreements, statutory filings, and partner admittance/cessation.",
     category: "Secretarial",
     iconName: "Layers",
-    statutoryFramework: "Limited Liability Partnership Act, 2008 | LLP Rules, 2009",
+    statutoryFramework: "Limited Liability Partnership Act, 2008 | LLP Rules, 2009 | RUN-LLP & FiLLiP",
     subServices: [
-      "LLP Incorporation (RUN-LLP & FiLLiP)",
-      "Customized LLP Agreement Drafting",
-      "Partner Additions & Resignations (Form 3 & 4)",
-      "Annual Solvency & Returns (Form 8 & 11)",
-      "Conversion of Business into LLP",
-      "LLP Strike-Off & Winding Up (Form 24)"
+      "Obtaining DIN & Digital Signatures for Partners",
+      "LLP Name Reservation & Incorporation",
+      "Drafting & Vetting of LLP Agreements",
+      "Conversion of Company / Firm into LLP",
+      "Annual Compliances & Solvency Returns (Form 8 & 11)",
+      "Admission, Retirement & Capital Restructuring",
+      "Taxation-Driven Restructuring Guidance",
+      "LLP Name & Registered Office Changes",
+      "FDI Facilitation & RBI FEMA Filings"
     ],
     keyOfferings: [
-      "Name reservation via RUN-LLP and Incorporation via FiLLiP",
-      "Drafting tailored LLP Agreements capturing profit sharing, capital contribution, and dispute mechanisms",
-      "Filing Form 3 and Form 4 for changes in Designated Partners, Partners, and Capital Structure",
-      "Annual Compliances: Form 11 (Annual Return) and Form 8 (Statement of Accounts & Solvency)",
-      "Conversion of Traditional Partnership Firms / Private Companies into LLP",
-      "Compounding of Offences and Strike-Off under Form 24"
+      "Obtaining DIN and Digital signatures for Partners",
+      "Seeking availability of desired Name of LLP",
+      "Incorporation of Limited Liability Partnership (LLP) Firm",
+      "Drafting and vetting of LLP Agreements",
+      "Conversion of company or partnership firm into Limited Liability Partnership",
+      "Annual Compliances and Filing of returns, statement of account etc",
+      "Providing necessary guidance in Restructuring in LLP",
+      "Executing process of Admission, Retirement / Resignation / Capital Restructuring and all other types of Restructuring in the LLP",
+      "Advising and guiding on Taxation driven Restructuring in the LLP",
+      "Providing Event based Services like changing Name of LLP, shifting Registered Office of LLP within or outside State etc",
+      "Facilitating FDIs in LLP and making all related FEMA Compliances with Reserve Bank of India"
     ],
-    fullDesc: "LLP combines the flexibility of a traditional partnership with the benefit of limited liability for partners. Our practice assists partners in designing dispute-proof agreements, ensuring seamless annual solvency filings with the Ministry of Corporate Affairs, and executing corporate restructuring into or out of the LLP structure."
+    sections: [
+      {
+        heading: "Limited Liability Partnership Services",
+        intro: "We provide the following gamut of services pertaining to LLPs:",
+        items: [
+          "Obtaining DIN and Digital signatures for Partners",
+          "Seeking availability of desired Name of LLP",
+          "Incorporation of Limited Liability Partnership (LLP) Firm",
+          "Drafting and vetting of LLP Agreements",
+          "Conversion of company or partnership firm into Limited Liability Partnership",
+          "Annual Compliances and Filing of returns, statement of account etc",
+          "Providing necessary guidance in Restructuring in LLP",
+          "Executing process of Admission, Retirement / Resignation / Capital Restructuring and all other types of Restructuring in the LLP",
+          "Advising and guiding on Taxation driven Restructuring in the LLP",
+          "Providing Event based Services like changing Name of LLP, shifting Registered Office of LLP within or outside State etc",
+          "Facilitating FDIs in LLP and making all related FEMA Compliances with Reserve Bank of India"
+        ]
+      }
+    ],
+    fullDesc: "Limited Liability Partnership, popularly known as LLP, is a worldwide recognized form of business organization. Introduced in India by way of the Limited Liability Partnership Act 2008, LLP combines the advantages of both the Company and Partnership entities into a single form of organization. LLPs need only two (2) Designated Partners and an LLP Agreement to commence its business operations. The Compliances under the LLP Act are fewer than those of a Company form of Organisation and hence most suited to small and medium-sized Business Organisations. Young Entrepreneurs or First Generation Entrepreneurs prefer LLP to all other forms of organisation."
   },
   {
     id: "corporate-advisory-and-compliances",
     title: "Corporate Advisory & Compliances",
-    shortDesc: "Retainer-based corporate secretarial services, statutory registers, board/shareholder meetings, and MCA V3 filings.",
+    shortDesc: "Retainer-based corporate secretarial services, statutory registers, board/general meetings, and MCA V3 filings.",
     category: "Compliance & Audit",
     iconName: "Compass",
     statutoryFramework: "Companies Act, 2013 | Secretarial Standards SS-1 & SS-2 | MCA V3 Portal",
     subServices: [
       "Alteration of MoA & AoA (Name/Capital/Objects)",
-      "Registered Office Shifting (RD & NCLT)",
-      "Board, Committee & General Meetings (AGM/EGM)",
-      "Statutory Registers & Secretarial Records",
-      "Annual ROC Filings (AOC-4 & MGT-7/7A)",
-      "Share Allotments & Capital Alterations (PAS-3, SH-7)",
-      "Charge Creation, Modification & Satisfaction"
+      "Allotment, Transfer & Dematerialization of Shares",
+      "Changes in Directorship & Key Managerial Personnel",
+      "Convening Board, Committee & General Meetings",
+      "Preparation of Annual Reports & Financial Statements",
+      "Creation, Modification & Satisfaction of Charges",
+      "Statutory Registers Maintenance under Act 2013",
+      "Compounding of Offences under Companies Act",
+      "Shifting of Registered Office across States / RoCs",
+      "Annual Audited Financials Filing in XBRL Form"
     ],
     keyOfferings: [
-      "Alteration of Memorandum & Articles of Association (Name, Registered Office, Capital, Objects)",
-      "Shifting of Registered Office from one State to another (RD & NCLT approval)",
-      "Convening and Documenting Board Meetings, Committee Meetings, and AGMs / EGMs",
-      "Maintenance of Statutory Registers (Members, Debentures, Directors, Charges, Investments)",
-      "Filing Annual Return (MGT-7/7A) and Financial Statements (AOC-4/AOC-4 XBRL)",
-      "Allotment of Shares on Right / Private Placement Basis (PAS-3) and Capital Increases (SH-7)",
-      "Creation, Modification, and Satisfaction of Charges (CHG-1, CHG-4, CHG-9)"
+      "Executing process of Alterations, modifications and changes in names of Companies, objects, share capital, situation of registered office, amendments and alterations in MoA and AoA",
+      "Executing process of Allotment of Shares, consolidation/sub-division of shares, transfer and transmission of Shares, conversion into stocks or warrants, share certificates, dematerialization, forfeiture",
+      "Executing statutory process of Changes with respect to Directorship including appointment, re-appointment, regularization, resignations, remuneration fixation and revisions",
+      "Convening process relating to conducting Board Meetings, General meetings including ensuring pre and post meeting statutory compliances",
+      "Executing process of ensuring Procedural compliances with respect to induction and expulsion of members, variation in membership rights",
+      "Preparation of annual reports and annual accounts including Balance Sheet, P&L account, income & expenditure, auditors report, directors' reports, corporate governance statement",
+      "Executing process of creation, modification and satisfaction of charges and MCA registration",
+      "Preparation of Dividend Policy and assistance for ascertainment, declaration and payment of interim and final dividend; unpaid and unclaimed dividend management",
+      "Maintenance of statutory registers as per the provisions of the Companies Act 2013",
+      "Assist in executing Procedures and compliances related to making inter-company loans, investments, guarantees and providing of securities",
+      "Providing Assistance for filing of the statutory Returns, documents with the Ministry of Corporate Affairs",
+      "Drafting various Corporate documents viz. MoA, AoA, Agreements, Allotment Letters, contracts, debentures, proxies, notices, resolutions and minutes of meetings",
+      "Executing Process for passing resolution through Postal Ballot",
+      "Executing process for Compounding of various offences under Companies Act 2013",
+      "Dematerialization/Rematerialization of securities and obtaining DIN / DSC",
+      "Liaison with offices of ROC / RD / CLB / MCA for obtaining regulatory approvals",
+      "Application for Condonation of delay while submission of Statutory Returns",
+      "Support for Statutory Compliances to Shifting of books of accounts from one place to another",
+      "Providing opinion on Corporate Law related queries and XBRL annual audited filing",
+      "Statutory Compliances to Shifting of Registered Office of the Company from One State to another or within RoC jurisdiction",
+      "Develop and monitor system of ascertaining Related Party Transactions"
     ],
-    fullDesc: "With enhanced regulatory scrutiny and stringent penalties under the Companies Act 2013, our ongoing corporate advisory ensures complete peace of mind for boards of directors. We handle corporate secretarial administration with precision, ensuring timely disclosures and zero non-compliance exposure."
+    sections: [
+      {
+        heading: "Corporate Advisory & Compliances Scope",
+        intro: "The summary of our services pertaining to Compliances, which are broadly required for various types of Companies includes but is not limited to:",
+        items: [
+          "Executing process of Alterations, modifications and changes in names of Companies, objects, share capital, situation of registered office, amendments and alterations in the Memorandum of Association and Articles of Association",
+          "Executing process of Allotment of Shares, consolidation/sub-division of shares, transfer and transmission of Shares, conversion of shares into stocks or warrants, issue of shares certificates, dematerialization of shares, forfeiture of shares etc.",
+          "Executing statutory process of Changes with respect to Directorship including appointment, re-appointment, regularization, resignations, fixation and revisions of the remunerations to Directors, Managers, Company Secretary, Compliance officer, secretary in whole time practice, auditors, cost auditors etc.",
+          "Convening process relating to conducting Board Meetings, General meetings including ensuring pre and post meeting statutory compliances",
+          "Executing process of ensuring Procedural compliances with respect to induction and expulsion of members, variation in membership rights",
+          "Preparation of annual reports and annual accounts including Balance Sheet, Profit and loss account, income and expenditure statement, auditors report, directors' reports, statement on corporate governance, obtaining compliance certificate, Preparation of directors/ chairman's statement etc.",
+          "Executing process of creation, modification and satisfaction of charges and facilitating client to represent Ministry of Corporate Affairs for Registration of the same",
+          "To help in Preparation of Dividend Policy and provide assistance for ascertainment, declaration and payment of interim and final dividend; management of unpaid and unclaimed dividend",
+          "Maintenance of statutory registers as per the provisions of the Companies Act 2013",
+          "Assist in executing Procedures and compliances related to making inter-company loans, investments, guarantees and providing of securities",
+          "Providing Assistance for filing of the statutory Returns, documents with the Ministry of Corporate Affairs",
+          "Assist in Drafting various Corporate documents viz. Memorandum of Association, Articles of Association, Agreements, Allotment Letter, contract of appointments, share certificates, debentures/bond certificates, proxies, dividend / interest / redemption warrants, fixed deposit receipts, share transfer documents, documents related to public offerings and listing, notices, resolutions and minutes of meetings",
+          "Assist in executing Process for passing resolution through Postal Ballot",
+          "Executing process for Compounding of various offences under Companies Act 2013",
+          "Assist in Dematerialization/Rematerialization of securities",
+          "Assist in Obtaining DIN / DSC (including PAN encrypted) for directors and professionals",
+          "Liaison with offices of ROC / RD / CLB / MCA for obtaining various regulatory approvals",
+          "Assist in making Application for Condonation of delay while submission of Statutory Returns",
+          "Provide Support for Statutory Compliances to Shifting of books of accounts from one place to another place",
+          "Providing opinion on Corporate Law related queries",
+          "Filing of Annual audited financials in XBRL form",
+          "Assist in executing Statutory Compliances to Shifting of Registered Office of the Company from One State to another or within the jurisdiction of One ROC to the another in the same state",
+          "Develop and monitor system of ascertaining Related Party Transactions",
+          "Any other matter related to working and administration of Company Law including any new developments"
+        ]
+      }
+    ],
+    fullDesc: "The summary of our services pertaining to Compliances, which are broadly required for various types of Companies includes but is not limited to continuous secretarial governance, board management, MCA statutory returns, and end-to-end statutory compliance."
   },
   {
     id: "corporate-and-financial-restructuring",
@@ -124,22 +239,64 @@ export const SERVICES: ServiceItem[] = [
     iconName: "TrendingUp",
     statutoryFramework: "Sections 230-240, Companies Act, 2013 | NCLT (CAA) Rules, 2016",
     subServices: [
-      "Schemes of Arrangement & Mergers (NCLT)",
-      "Fast Track Mergers (Section 233)",
-      "Reduction of Share Capital (Section 66)",
-      "Slump Sale & Business Transfer Agreements (BTA)",
-      "Joint Ventures & Shareholder Charters (SHA / SPA)",
-      "ESOP Scheme Structuring & Securities Buy-Back"
+      "Structuring Corporate Governance Framework",
+      "Takeovers, Mergers & Demergers (NCLT)",
+      "Post-Merger Integration & Compliances",
+      "Revival of Defunct / Sick Companies",
+      "Variation of Class Rights & Joint Ventures",
+      "Conversion (Private/Public/LLP)",
+      "Dissolution & Winding Up of Companies",
+      "Rights, Bonus, Sweat Equity & Preferential Issues",
+      "ESOP / ESPS Scheme Structuring",
+      "Buy-Back & Reduction of Share Capital"
     ],
     keyOfferings: [
-      "Schemes of Arrangement, Mergers, and Demergers under NCLT Jurisdiction",
-      "Fast Track Mergers between Small Companies / Holding & Wholly Owned Subsidiary (Section 233)",
-      "Reduction of Share Capital (Section 66) before NCLT",
-      "Business Transfer Agreements (BTA), Slump Sale, and Asset Purchase Advisory",
-      "Joint Venture (JV) Structuring, Shareholders' Agreements (SHA), and Share Purchase Agreements (SPA)",
-      "Advisory on Corporate Buy-Back of Securities and ESOP Scheme Structuring"
+      "Undertaking process of determining / structuring Corporate Governance Structure",
+      "Corporate Restructuring in the nature of takeover, Mergers, De-mergers",
+      "Undertaking post-merger related services",
+      "Revival of defunct/sick Companies",
+      "Variation of Class Rights",
+      "Joint Venture and alliance",
+      "Conversion of Companies from Private to Public, from Public to Private or from Companies into LLP",
+      "Dissolution and Winding up of Companies",
+      "Change in the management of the Company",
+      "Issuing and allotment of securities for cash / consideration other than cash carrying voting rights and/or differential voting rights",
+      "Rights issue / Bonus Issue / Sweat Equity / Preferential Issue/ Private Placement of securities",
+      "Reclassification / consolidation / sub division/ cancellation of share capital",
+      "Employees Stock Option Scheme / Employees Stock Purchase Scheme",
+      "Buy Back of Securities",
+      "Reduction of share capital"
     ],
-    fullDesc: "Restructuring is essential to unlock enterprise value, optimize operational synergies, or reposition for market expansion. Azhar Shaikh & Associates coordinates the entire restructuring roadmap: drafting schemes of arrangement, valuation handoffs, obtaining regulatory clearances from RoC, RD, OL, and securing sanction orders from the National Company Law Tribunal."
+    sections: [
+      {
+        heading: "Corporate Restructuring",
+        intro: "This category of services includes but is not limited to:",
+        items: [
+          "Undertaking process of determining / structuring Corporate Governance Structure",
+          "Corporate Restructuring in the nature of takeover, Mergers, De-mergers",
+          "Undertaking post-merger related services",
+          "Revival of defunct/sick Companies",
+          "Variation of Class Rights",
+          "Joint Venture and alliance",
+          "Conversion of Companies from Private to Public, from Public to Private or from Companies into LLP",
+          "Dissolution and Winding up of Companies",
+          "Change in the management of the Company"
+        ]
+      },
+      {
+        heading: "FINANCIAL RESTRUCTURING",
+        intro: "This category of services includes but is not limited to:",
+        items: [
+          "Issuing and allotment of securities for cash / consideration other than cash carrying voting rights and/or differential voting rights",
+          "Rights issue / Bonus Issue / Sweat Equity / Preferential Issue / Private Placement of securities",
+          "Reclassification / consolidation / sub division / cancellation of share capital",
+          "Employees Stock Option Scheme / Employees Stock Purchase Scheme",
+          "Buy Back of Securities",
+          "Reduction of share capital"
+        ]
+      }
+    ],
+    fullDesc: "Corporate and Financial restructuring is the process of redesigning one or more aspects of a Company. The process of reorganizing a Company may be implemented due to a number of different factors, such as positioning the Company to be more competitive, survive a currently adverse economic climate, or poise the corporation to move in an entirely new direction."
   },
   {
     id: "due-diligence",
@@ -147,24 +304,36 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "In-depth corporate health checks for M&A, private equity investments, bank loan sanctioning, and pre-IPO verification.",
     category: "Compliance & Audit",
     iconName: "Search",
-    statutoryFramework: "Companies Act, 2013 | SEBI Regulations | Banking Guidelines",
+    statutoryFramework: "Companies Act, 2013 | SEBI Regulations | Banking Guidelines | RBI Act",
     subServices: [
-      "Pre-Acquisition & PE Legal Due Diligence",
-      "Bank Credit & Loan Facility Due Diligence",
-      "RoC Search Reports & Title Verification",
-      "Pre-IPO Secretarial Health-Checks",
-      "Statutory Non-Compliance & Red-Flag Audit",
-      "Risk Remediation Action Plans"
+      "Physical & Virtual Data Room Creation",
+      "Secretarial Compliance Due Diligence Audit",
+      "Pre & Post Funding / M&A Documentation",
+      "Private Funding Advisory & Assistance",
+      "Bank / Financial Institution Consortium Due Diligence",
+      "Title Verification & RoC Search Reports"
     ],
     keyOfferings: [
-      "Pre-Acquisition Secretarial & Legal Due Diligence for Investors & Private Equity",
-      "Secretarial Due Diligence required by Commercial Banks & Financial Institutions for Credit Facilities",
-      "Search Reports and Status Reports from ROC records across India",
-      "Pre-IPO Due Diligence and Capital History Verification",
-      "Identification of Statutory Non-compliances, Undisclosed Charges, and Potential Penalties",
-      "Comprehensive Red-Flag Due Diligence Reports with Remediation Action Plans"
+      "Data Room Creation for Due Diligence Audit - physical and virtual",
+      "Due Diligence Audit - Secretarial compliances",
+      "Handling documentation - pre and post funding/ merger/ acquisition / investment etc.",
+      "Private Funding - Advisory and Assistance including drafting",
+      "To undertake Due diligence of Corporate Compliances in terms of RBI Act before granting Loan / Financial Assistance by Bank or Financial Institutions (Whether under Consortium Arrangement or not)"
     ],
-    fullDesc: "Before deploying capital or sanctioning substantial credit lines, institutional lenders and private investors demand uncompromising transparency. Our rigorous due diligence unearths statutory liabilities, verifies title to shares, examines charge registrations, and provides actionable remediation roadmaps to de-risk transactions."
+    sections: [
+      {
+        heading: "Due Diligence Audit & Assurance",
+        intro: "We mainly undertake audit and conduct Due Diligence in events including (but not limited to):",
+        items: [
+          "Data Room Creation for Due Diligence Audit - physical and virtual",
+          "Due Diligence Audit - Secretarial compliances",
+          "Handling documentation - pre and post funding/ merger/ acquisition / investment etc.",
+          "Private Funding - Advisory and Assistance including drafting",
+          "To undertake Due diligence of Corporate Compliances in terms of RBI Act before granting Loan / Financial Assistance by Bank or Financial Institutions. (Whether under Consortium Arrangement or not)"
+        ]
+      }
+    ],
+    fullDesc: "A Due Diligence is essential when Companies aim to enter into transactions like Mergers & Acquisitions, Takeovers or Amalgamations. Especially in case of cross border Merger & Amalgamation or Cross Cultural Alliance, Due Diligence is crucial before making any decision. Also when the Company wants to release IPOs or to issue Foreign Currency Convertible Bonds (FCCBs), Global Depository Receipts (GDRs), Due Diligence is the prime focus in order to ascertain compliance of various laws and regulations including Commercial Agreements. Due Diligence entails the specific scrutiny of the legal affairs of the target company with a view to uncover any legal risks and providing the buyer Company with extensive insights into the Company's legal affairs."
   },
   {
     id: "fema-and-rbi",
@@ -174,22 +343,30 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Globe2",
     statutoryFramework: "Foreign Exchange Management Act, 1999 (FEMA) | RBI Master Directions | FIRMS Portal",
     subServices: [
-      "Inbound FDI Advisory (Automatic & Approval Routes)",
-      "RBI FIRMS Portal & FC-GPR Reporting",
-      "Transfer of Shares (Form FC-TRS)",
+      "Filing FC-GPR on Allotment of Shares to Non-Residents",
+      "Filing FC-TRS for Resident/Non-Resident Transfers",
       "Annual Foreign Liabilities & Assets (FLA Return)",
-      "Overseas Direct Investment (ODI Structuring)",
-      "External Commercial Borrowings (ECB / LRN)",
-      "Branch, Liaison & Project Office Setup"
+      "Branch, Liaison & Project Office Setup & Closure",
+      "Compounding of Offences under FEMA Provisions",
+      "NBFC Returns & Regulatory Compliances with RBI"
     ],
     keyOfferings: [
-      "Inbound Foreign Direct Investment (FDI) Advisory and Compliance under Automatic & Approval Routes",
-      "Filing Single Master Form (SMF) via RBI FIRMS Portal including Form FC-GPR (Foreign Currency - Gross Provisional Return)",
-      "Transfer of Shares between Residents & Non-Residents (Form FC-TRS)",
-      "Annual Return on Foreign Liabilities and Assets (FLA Return)",
-      "Overseas Direct Investment (ODI) Structuring for Indian Entities investing abroad",
-      "External Commercial Borrowings (ECB) Advisory and Loan Registration Number (LRN) filings",
-      "Setting up & Compounding of Branch Office (BO), Liaison Office (LO) and Project Office (PO)"
+      "Preparation and filing of Returns with the Reserve Bank of India on Allotment of Shares in the form of FC-GPR, Transfer of Shares from Resident to Non-Resident or vice versa in the Form of FC-TRS and return with respect to Foreign Assets and Liabilities etc",
+      "Registering and Closure of Branch, Liaison or Project office of a Foreign Company in India with the Reserve Bank of India as well as Department of Company Affairs etc",
+      "Compounding the Offences under various provisions of FEMA",
+      "Preparation and filing of Returns with respect to Non-Banking Finance Company"
+    ],
+    sections: [
+      {
+        heading: "FEMA & RBI Regulatory Services",
+        intro: "This Category of services mainly includes but is not limited to:",
+        items: [
+          "Preparation and filing of Returns with the Reserve Bank of India on Allotment of Shares in the form of FC-GPR, Transfer of Shares from Resident to Non-Resident or vice versa in the Form of FC-TRS and return with respect to Foreign Assets and Liabilities etc",
+          "Registering and Closure of Branch, Liaison or Project office of a Foreign Company in India with the Reserve Bank of India as well as Department of Company Affairs etc",
+          "Compounding the Offences under various provisions of FEMA",
+          "Preparation and filing of Returns with respect to Non-Banking Finance Company"
+        ]
+      }
     ],
     fullDesc: "Navigating India's cross-border foreign exchange framework requires acute technical mastery. We advise international investors, NRI stakeholders, and Indian corporates expanding overseas on seamless RBI compliance, ensuring full conformity with pricing guidelines, sectoral caps, and compulsory FIRMS reporting."
   },
@@ -201,22 +378,64 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Award",
     statutoryFramework: "Section 204, Companies Act, 2013 | Regulation 24A, SEBI (LODR) Regulations, 2015",
     subServices: [
-      "Mandatory Secretarial Audit (Section 204 / MR-3)",
-      "Annual Secretarial Compliance Report (SEBI)",
-      "Annual Return Certification (Form MGT-8)",
-      "Corporate Governance Compliance Audits",
-      "Depository Participant & RTA Internal Audit",
-      "Share Capital Reconciliation Audit (Reg 76)"
+      "Mandatory Secretarial Audit under Section 204",
+      "Corporate Governance Compliance Audit (SEBI LODR)",
+      "Depositories & Participants Share Reconciliation Audit",
+      "SEBI Takeover & Insider Trading Audits",
+      "Secretarial Compliance Certification",
+      "Preferential Issue, Buy-Back & FC-GPR Certificates",
+      "Exhaustive Annual Return Verification & Certification",
+      "Certification of MCA E-Forms on Web Portal",
+      "Search & Status Reports and Inspection Facility",
+      "Scrutinizer Reports for AGMs, Postal Ballots & Court Meetings"
     ],
     keyOfferings: [
-      "Mandatory Secretarial Audit under Section 204 of the Companies Act (Form MR-3)",
-      "Annual Secretarial Compliance Report for Listed Entities under SEBI Circulars",
-      "Certification of Annual Returns in Form MGT-8 for Listed and prescribed Public/Private Companies",
-      "Corporate Governance Compliance Certifications",
-      "Internal Audit of Depository Participants and Registrar & Transfer Agents (RTA)",
-      "Reconciliation of Share Capital Audit Reports under Regulation 76 of SEBI (DP) Regulations"
+      "Undertaking Secretarial Audit across Media, NBFCs, Pharma, Manufacturing, Merchant Banking, Debt Listed, and Power Generation Companies",
+      "Undertaking Corporate Governance Compliance Audit as required under SEBI (LODR)",
+      "Undertaking Audit as required by SEBI under Depositories and Participants Regulation: Reconciliation of share Capital Audit & Share Transfer Audit",
+      "Undertaking specific audits to ensure compliance of the SEBI Takeover Code, SEBI Insider Trading Regulations, etc.",
+      "Secretarial Compliance Certification",
+      "Certificate for Preferential issue of Shares, Buy-back, FC-GPR etc.",
+      "Verification of Secretarial Data and Annual Returns of listed Companies and Certification of correctness and compliances by exhaustive audit",
+      "Certification of E-Forms which are required to be filed with the Registrar of Companies through web portal of Ministry of Corporate Affairs",
+      "Other Miscellaneous Certificates issued under various Acts like FEMA, Listing Obligation Regulations etc.",
+      "Filing of Annual Return/Forms (including XBRL)",
+      "Providing Inspection facility and Search and Status Report",
+      "Scrutinizer Report with respect to General Meetings, Postal Ballot Meetings, Court Convened Meetings, etc."
     ],
-    fullDesc: "Secretarial Audit serves as an independent assurance mechanism evaluating statutory compliance across company law, securities laws, labor statutes, and environmental rules. Our rigorous audit methodologies protect board directors against regulatory culpability and reinforce institutional investor trust."
+    sections: [
+      {
+        heading: "Secretarial Audit Coverage",
+        intro: "We undertake Secretarial Audit across diverse corporate sectors including:",
+        items: [
+          "Media Companies",
+          "Non-Banking Finance Companies",
+          "Pharmaceuticals Companies",
+          "Various Manufacturing Companies",
+          "Merchant Banking Companies",
+          "Debt Listed Companies",
+          "Power Generation Companies etc."
+        ]
+      },
+      {
+        heading: "Other Audits / Certification / Reports",
+        intro: "Comprehensive certification and independent assurance services:",
+        items: [
+          "Undertaking Corporate Governance Compliance Audit as required under SEBI (LODR)",
+          "Undertaking Audit as required by SEBI under Depositories and Participants Regulation: a). Reconciliation of share Capital Audit; b). Share Transfer Audit",
+          "Undertaking specific audits to ensure compliance of the SEBI Takeover Code, SEBI Insider Trading Regulations, etc.",
+          "Secretarial Compliance Certification",
+          "Certificate for Preferential issue of Shares, Buy-back, FC-GPR etc.",
+          "Verification of Secretarial Data and Annual Returns of listed Companies and Certification of the correctness and compliances of the contents by exhaustive audit of each provisions of the Companies Act",
+          "Certification of E-Forms which are required to be filed with the Registrar of Companies through web portal of Ministry of Corporate of Affairs",
+          "Other Miscellaneous Certificates that may be required to be issued under various other Acts like FEMA, Listing Obligation (Disclosure and Requirements) Regulations etc.",
+          "Filing of Annual Return/Forms (including XBRL)",
+          "Providing Inspection facility and Search and Status Report",
+          "Scrutinizer Report with respect to General Meetings, Postal Ballot Meetings, Court Convened Meetings, etc."
+        ]
+      }
+    ],
+    fullDesc: "Introduced by the Companies Act 2013, 'Secretarial Audit' is a process to check compliances made by the Company under Corporate Law & other laws, rules, regulations, procedures etc. It is a mechanism to monitor compliance with the requirements of stated laws and processes. Periodically inspecting the records of company gives exact information whether, and if so, to what extent Company has complied with the laws applicable to it. Secretarial Audit assures regulators, stakeholders and management of the Company that it has a disciplined approach to evaluate and improve effectiveness of risk management, control, and governance processes."
   },
   {
     id: "sebi-and-listing-compliances",
@@ -226,22 +445,46 @@ export const SERVICES: ServiceItem[] = [
     iconName: "BarChart3",
     statutoryFramework: "SEBI (LODR) Regulations, 2015 | SEBI (PIT) Regulations, 2015 | SEBI (SAST) Regulations, 2011",
     subServices: [
-      "SEBI (LODR) Quarterly & Annual Compliances",
-      "IPO, Rights Issue & Preferential Issue Readiness",
-      "Insider Trading Code (PIT) & SDD Compliance",
-      "Substantial Acquisition & Takeover Disclosures (SAST)",
-      "Stock Exchange Liaison & In-Principle Approvals",
-      "Delisting, Relisting & Securities Buy-Back"
+      "Assistance in Managing IPO / FPO",
+      "Listing / Delisting / Relisting of Securities",
+      "SEBI Intermediaries Registration (Brokers, Merchant Bankers, AIFs)",
+      "Audits and Certification under SEBI (LODR)",
+      "Continuous Compliance with SEBI Guidelines & Rules",
+      "Liaison with Stock Exchanges (BSE & NSE)",
+      "Acting as Scrutinizer for Postal Ballots & Court Meetings",
+      "Ensuring Compliance of SEBI Takeover Code & Insider Trading"
     ],
     keyOfferings: [
-      "Quarterly, Half-Yearly, and Annual Compliances under SEBI Listing Regulations (LODR)",
-      "Secretarial support for Initial Public Offerings (IPO), Rights Issues, and Preferential Issues",
-      "Structuring & Enforcing Code of Conduct under SEBI (Prohibition of Insider Trading) Regulations",
-      "Filing Disclosures under SEBI (Substantial Acquisition of Shares and Takeovers) Regulations (SAST)",
-      "Delisting, Voluntary Buy-Back of Equity Shares, and Relisting of Securities",
-      "Liaison with Stock Exchanges (BSE & NSE) for In-Principle and Listing Approvals"
+      "Assistance in managing IPO / FPO",
+      "Listing/ Delisting/ Relisting of Securities",
+      "Registration of intermediaries with SEBI (Mutual Fund, Stock and Sub Brokers, Portfolio Managers, Venture Capital Funds, Merchant Bankers, FIIs and other intermediaries)",
+      "Audits and certification under SEBI (LODR)",
+      "Assistance in compliance with provisions of SEBI (LODR)",
+      "Assistance in compliance with various Guidelines, Rules and Regulations issued by SEBI",
+      "Liaison with office of Stock Exchanges",
+      "Acting as Scrutinizer in the process of Postal Ballot, Court Convened Meetings, etc.",
+      "Ensuring compliance of SEBI Takeover Code, SEBI Insider Trading Regulations, etc.",
+      "Other allied services"
     ],
-    fullDesc: "Listed companies operate in an intensely scrutinized regulatory environment. Azhar Shaikh & Associates delivers strategic counsel on listing agreement covenants, managing board committees (Audit, NRC, SRC, CSR), structured digital database (SDD) compliance, and disclosure obligations under SEBI mandate."
+    sections: [
+      {
+        heading: "SEBI & Listing Compliances Scope",
+        intro: "The summary of our services pertaining to Listing Compliances, which are broadly required for various types of Listed Companies includes but is not limited to:",
+        items: [
+          "Assistance in managing IPO / FPO",
+          "Listing/ Delisting/ Relisting of Securities",
+          "Registration of intermediaries with SEBI (Mutual Fund, Stock and Sub Brokers, Portfolio Managers, Venture Capital Funds, Merchant Bankers, FIIs and other intermediaries)",
+          "Audits and certification under SEBI (LODR)",
+          "Assistance in compliance with provisions of SEBI (LODR)",
+          "Assistance in compliance with various Guidelines, Rules and Regulations issued by SEBI",
+          "Liaison with office of Stock Exchanges",
+          "Acting as Scrutinizer in the process of Postal Ballot, Court Convened Meetings, etc.",
+          "Ensuring compliance of SEBI Takeover Code, SEBI Insider Trading Regulations, etc.",
+          "Other allied services"
+        ]
+      }
+    ],
+    fullDesc: "The summary of our services pertaining to Listing Compliances, which are broadly required for various types of Listed Companies includes assistance in capital market offerings, stock exchange liaison, LODR certifications, and statutory market integrity compliance."
   },
   {
     id: "representation-and-other-services",
@@ -251,25 +494,62 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Scale",
     statutoryFramework: "National Company Law Tribunal (NCLT) Rules, 2016 | Section 441 Compounding | Trade Marks Act, 1999",
     subServices: [
-      "Petitions & Advocacy before NCLT Benches",
-      "Compounding of Offences (Section 441)",
-      "Condonation of Delay Applications (Section 460)",
-      "Revival of Struck-off Companies (Section 252)",
-      "RoC Adjudication of Penalties (Section 454)",
-      "Trademark Search, Filings & Opposition Hearings",
-      "Formal Written Legal Opinions on Corporate Law"
+      "Representation before MCA & Regional Directors (RD)",
+      "Advocacy before National Company Law Tribunal (NCLT)",
+      "Appearances before Securities and Exchange Board of India (SEBI)",
+      "Appearances before Official Liquidator (OL) & CLB",
+      "Representation before Reserve Bank of India (RBI)",
+      "Representation before Stock Exchanges (BSE / NSE)",
+      "Providing Formal Written Legal Opinions",
+      "Drafting Shareholders' Agreements & Legal Contracts",
+      "Financials Conversion for XBRL Filings",
+      "Intellectual Property Rights & Trademark Services"
     ],
     keyOfferings: [
-      "Drafting Petitions & Appearing before National Company Law Tribunal (NCLT)",
-      "Compounding of Offences under Section 441 of the Companies Act before NCLT / Regional Director",
-      "Applications for Condonation of Delay under Section 460 of the Companies Act",
-      "Revival / Restoration of Struck-off Companies under Section 252 before NCLT",
-      "Representations before Registrar of Companies (RoC) for Adjudication of Penalties (Section 454)",
-      "Appearance before Official Liquidator (OL) in Winding-up Proceedings",
-      "Trademark Search, Filing (TM-A), Objections & Show-Cause Hearings before TM Registry",
-      "Providing Written Legal Opinions on intricate nuances of Company Law and Securities Jurisprudence"
+      "Representation before Ministry of Corporate Affairs (MCA)",
+      "Representation before Securities and Exchange Board of India (SEBI)",
+      "Representation before Company Law Board (CLB)",
+      "Representation before Central Government (CG)",
+      "Representation before Official Liquidator (OL)",
+      "Representation before National Company Law Tribunal (NCLT)",
+      "Representation before Reserve Bank of India (RBI)",
+      "Representation before Stock Exchanges (SE)",
+      "Representation before Regional Director (RD)",
+      "Providing Written Opinions on complex Company Law matters",
+      "Drafting Shareholder's Agreements and other Legal Documents",
+      "Providing opinion on Corporate Law related queries",
+      "Conversion of Financials of Company into machine-readable format to facilitate XBRL filings",
+      "Providing services related to Intellectual Property Rights"
     ],
-    fullDesc: "When contentious regulatory issues or inadvertent non-compliances arise, competent representation is paramount. We advocate on behalf of companies, promoter groups, and management before NCLT benches, Regional Directorates, and Registrar of Companies, securing compounded settlements and restoration orders."
+    sections: [
+      {
+        heading: "Representation Authorities",
+        intro: "We represent our clients before the following Regulatory Authorities:",
+        items: [
+          "Ministry of Corporate Affairs (MCA)",
+          "Securities and Exchange Board of India (SEBI)",
+          "Company Law Board (CLB)",
+          "Central Government (CG)",
+          "Official Liquidator (OL)",
+          "National Company Law Tribunal (NCLT)",
+          "Reserve Bank of India (RBI)",
+          "Stock Exchanges (SE)",
+          "Regional Director (RD)"
+        ]
+      },
+      {
+        heading: "Other Allied & Specialized Services",
+        intro: "Corporate legal opinions and documentation:",
+        items: [
+          "Providing Written Opinions",
+          "Drafting Shareholder's Agreements and other Legal Documents",
+          "Providing opinion on Corporate Law related queries",
+          "Conversion of Financials of Company into machine-readable format to facilitate XBRL filings by the Corporate",
+          "Providing services related to Intellectual Property Rights"
+        ]
+      }
+    ],
+    fullDesc: "We represent our clients before key regulatory and judicial authorities including MCA, SEBI, NCLT, RBI, and Stock Exchanges, while offering authoritative written legal opinions, shareholder charters, and specialized corporate documentation."
   },
   {
     id: "trademark-and-ip-rights",
@@ -296,6 +576,22 @@ export const SERVICES: ServiceItem[] = [
       "Assignment, Licensing & Transmission of Trademarks (Form TM-P)",
       "Trademark Renewal & Restoration Monitoring across corporate portfolios",
       "Copyright Registration for Literary, Artistic and Software Works"
+    ],
+    sections: [
+      {
+        heading: "Trademark & Brand Protection",
+        intro: "Comprehensive IP asset management and enforcement:",
+        items: [
+          "Comprehensive Trademark Search and Class Classification (NICE Classification Classes 1 to 45)",
+          "E-filing of Trademark Applications (Form TM-A) for Words, Logos, and Device Marks",
+          "Drafting Legal Replies to Examination Reports & Objections (Section 9 & Section 11)",
+          "Appearance before Registrar of Trade Marks for Show-Cause Hearings",
+          "Trademark Opposition Proceedings (Filing Notices of Opposition & Counter Statements - Form TM-O)",
+          "Assignment, Licensing & Transmission of Trademarks (Form TM-P)",
+          "Trademark Renewal & Restoration Monitoring across corporate portfolios",
+          "Copyright Registration for Literary, Artistic and Software Works"
+        ]
+      }
     ],
     fullDesc: "As registered Trademark Agents, Azhar Shaikh & Associates safeguards your brand equity. We manage the entire lifecycle of trade mark protection—from pre-filing distinctiveness audits to contested opposition litigation before the Trade Marks Registry. We ensure robust protection for corporate identities, product brand names, and artistic assets."
   }
@@ -563,5 +859,26 @@ export const TESTIMONIALS = [
     author: "Vikramaditya Rao",
     designation: "Independent Director & Audit Committee Chairman",
     location: "New Delhi"
+  },
+  {
+    id: "4",
+    quote: "Navigating CDSCO approvals, state clinical trial licensing, and cross-border tech licensing agreements requires razor-sharp legal mastery. Azhar Shaikh & Associates handled our regulatory covenants with flawless secretarial precision.",
+    author: "Dr. Ananya Sen",
+    designation: "Whole-Time Director & Head of Regulatory, Cadence Biopharma Ltd.",
+    location: "Hyderabad"
+  },
+  {
+    id: "5",
+    quote: "From drafting our multi-party Shareholders' Agreement and ESOP trust architecture to guiding our Series B FDI inflow under FEMA reporting, CS Azhar Shaikh has been an indispensable strategic legal ally for our founding team.",
+    author: "Devansh Kothari",
+    designation: "Co-Founder & CEO, ZetaPay Financial Technologies",
+    location: "Bengaluru"
+  },
+  {
+    id: "6",
+    quote: "Managing commercial consortium charges, RERA disclosures, and special purpose vehicle governance across multi-state infrastructure projects seemed daunting until we engaged ASA. Outstanding competence and proactive advisory.",
+    author: "Pradeep Singhal",
+    designation: "Executive Director, Skyline Infrastructure & Logistics SPV",
+    location: "Mumbai"
   }
 ];

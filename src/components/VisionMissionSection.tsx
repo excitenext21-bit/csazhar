@@ -35,16 +35,16 @@ export default function VisionMissionSection({
           <div className="w-16 h-[1.5px] bg-[#b8967e]/60 mx-auto mt-4" />
         </div>
 
-        {/* Ultra-Modern Alternating Split Showcase */}
-        <div className="space-y-10 lg:space-y-12">
+        {/* Unified Purpose Showcase Container (Vision & Mission as One) */}
+        <div className="bg-[#faf8f5]/60 rounded-[32px] border border-zinc-200/90 shadow-[0_8px_32px_rgba(0,27,65,0.04)] p-5 sm:p-7 lg:p-9 space-y-8 sm:space-y-10">
           
           {/* =========================================================================
-              PANEL 1: OUR VISION (Image Left, Typography Right)
+              PART 1: OUR VISION (Image Left, Typography Right)
              ========================================================================= */}
-          <div className="bg-[#faf8f5]/60 hover:bg-white rounded-[32px] border border-zinc-200/90 hover:border-[#b8967e]/60 shadow-[0_4px_30px_rgba(0,27,65,0.03)] hover:shadow-[0_20px_50px_rgba(0,27,65,0.08)] transition-all duration-500 hover:-translate-y-1.5 p-4 sm:p-5 lg:p-6 flex flex-col md:flex-row items-stretch gap-6 lg:gap-10 group">
+          <div className="flex flex-col md:flex-row items-stretch gap-6 lg:gap-10 group">
             
             {/* Inset Cinematic Photo Container */}
-            <div className="w-full md:w-[46%] lg:w-[44%] shrink-0 h-[260px] sm:h-[320px] md:h-auto min-h-[300px] lg:min-h-[360px] rounded-2xl overflow-hidden relative bg-zinc-100 shadow-xs border border-zinc-200/60">
+            <div className="w-full md:w-[46%] lg:w-[44%] shrink-0 h-[260px] sm:h-[320px] md:h-auto min-h-[300px] lg:min-h-[340px] rounded-2xl overflow-hidden relative bg-zinc-100 shadow-xs border border-zinc-200/60">
               <img 
                 src="/vision_card.jpg" 
                 alt="Azhar Shaikh & Associates Corporate Vision" 
@@ -64,7 +64,7 @@ export default function VisionMissionSection({
             </div>
 
             {/* Typography Content Area */}
-            <div className="flex-1 py-4 sm:py-6 lg:py-8 pr-2 sm:pr-4 lg:pr-6 pl-2 sm:pl-4 flex flex-col justify-between space-y-6">
+            <div className="flex-1 py-3 sm:py-5 lg:py-6 pr-2 sm:pr-4 lg:pr-6 pl-2 sm:pl-4 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 {/* Meta Header */}
                 <div className="flex items-center gap-2.5 text-xs font-mono font-semibold tracking-[0.22em] uppercase text-[#9a7862]">
@@ -94,13 +94,27 @@ export default function VisionMissionSection({
 
           </div>
 
+          {/* Elegant Divider between Vision and Mission */}
+          <div className="relative py-1">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <div className="w-full border-t border-zinc-200/90" />
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-[#f7f4ef] px-4 text-[#b8967e]/60 flex items-center gap-2 rounded-full border border-zinc-200/60 shadow-xs py-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b8967e]/60" />
+                <span className="w-2 h-2 rotate-45 border border-[#b8967e]/80" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b8967e]/60" />
+              </span>
+            </div>
+          </div>
+
           {/* =========================================================================
-              PANEL 2: OUR MISSION (Typography Left, Image Right - Inverted for Rhythm)
+              PART 2: OUR MISSION (Typography Left, Image Right - Inverted for Rhythm)
              ========================================================================= */}
-          <div className="bg-[#faf8f5]/60 hover:bg-white rounded-[32px] border border-zinc-200/90 hover:border-[#b8967e]/60 shadow-[0_4px_30px_rgba(0,27,65,0.03)] hover:shadow-[0_20px_50px_rgba(0,27,65,0.08)] transition-all duration-500 hover:-translate-y-1.5 p-4 sm:p-5 lg:p-6 flex flex-col md:flex-row-reverse items-stretch gap-6 lg:gap-10 group">
+          <div className="flex flex-col md:flex-row-reverse items-stretch gap-6 lg:gap-10 group">
             
             {/* Inset Cinematic Photo Container */}
-            <div className="w-full md:w-[46%] lg:w-[44%] shrink-0 h-[260px] sm:h-[320px] md:h-auto min-h-[300px] lg:min-h-[360px] rounded-2xl overflow-hidden relative bg-zinc-100 shadow-xs border border-zinc-200/60">
+            <div className="w-full md:w-[46%] lg:w-[44%] shrink-0 h-[260px] sm:h-[320px] md:h-auto min-h-[300px] lg:min-h-[340px] rounded-2xl overflow-hidden relative bg-zinc-100 shadow-xs border border-zinc-200/60">
               <img 
                 src="/mission_card.jpg" 
                 alt="Azhar Shaikh & Associates Corporate Mission" 
@@ -120,7 +134,7 @@ export default function VisionMissionSection({
             </div>
 
             {/* Typography Content Area */}
-            <div className="flex-1 py-4 sm:py-6 lg:py-8 pl-2 sm:pl-4 lg:pl-6 pr-2 sm:pr-4 flex flex-col justify-between space-y-6">
+            <div className="flex-1 py-3 sm:py-5 lg:py-6 pl-2 sm:pl-4 lg:pl-6 pr-2 sm:pr-4 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 {/* Meta Header */}
                 <div className="flex items-center gap-2.5 text-xs font-mono font-semibold tracking-[0.22em] uppercase text-[#9a7862]">

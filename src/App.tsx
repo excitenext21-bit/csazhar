@@ -8,6 +8,7 @@ import LeadershipTeam from "./components/LeadershipTeam";
 import ClienteleSectors from "./components/ClienteleSectors";
 import KnowledgeHub from "./components/KnowledgeHub";
 import FAQSection from "./components/FAQSection";
+import FAQPage from "./components/FAQPage";
 import ContactConsultation from "./components/ContactConsultation";
 import Footer from "./components/Footer";
 import ServiceDetailModal from "./components/ServiceDetailModal";
@@ -148,6 +149,7 @@ export default function App() {
         {activePage === "services" && (
           <div className="pt-28 sm:pt-36">
             <PracticeAreas 
+              initialServiceId={selectedService?.id}
               onSelectService={(srv) => setSelectedService(srv)}
               onOpenConsultation={(topic) => handleOpenConsultation(topic)}
             />
@@ -176,7 +178,7 @@ export default function App() {
         {/* Dedicated Page: Frequently Asked Questions (FAQ) */}
         {(activePage === "faq" || activePage === "careers") && (
           <div className="pt-24 sm:pt-32">
-            <FAQSection 
+            <FAQPage 
               onOpenConsultation={(topic) => handleOpenConsultation(topic || "FAQ Support Inquiry")}
               onNavigateContact={() => handleNavigate("contact")}
               onNavigateServices={() => handleNavigate("services")}

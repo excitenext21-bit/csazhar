@@ -1,3 +1,9 @@
+export interface ServiceSection {
+  heading: string;
+  intro?: string;
+  items: string[];
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -9,6 +15,7 @@ export interface ServiceItem {
   subServices?: string[];
   statutoryFramework?: string;
   deliverables?: string[];
+  sections?: ServiceSection[];
 }
 
 export interface TeamMember {

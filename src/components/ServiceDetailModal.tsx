@@ -90,30 +90,71 @@ export default function ServiceDetailModal({ service, subService, onClose, onCon
           <p>{service.fullDesc}</p>
         </div>
 
-        {/* Comprehensive Scope & Deliverables */}
-        <div className="space-y-3 pt-2">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-[#b8967e] font-bold block">
-            Comprehensive Scope of Services & Deliverables:
-          </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-200 font-sans">
-            {(service.subServices || service.keyOfferings).map((item, idx) => {
-              const isSelected = subService && (item.toLowerCase().includes(subService.toLowerCase()) || subService.toLowerCase().includes(item.toLowerCase()));
-              return (
-                <div 
-                  key={idx} 
-                  className={`flex items-start gap-2.5 p-3 rounded-xl transition-all ${
-                    isSelected 
-                      ? "bg-[#b8967e]/25 border-2 border-[#b8967e] text-white shadow-lg shadow-[#b8967e]/10 ring-1 ring-[#b8967e]" 
-                      : "bg-[#12243e] border border-white/5 hover:border-[#b8967e]/30"
-                  }`}
-                >
-                  <CheckCircle2 size={15} className={`${isSelected ? "text-white" : "text-[#b8967e]"} shrink-0 mt-0.5`} />
-                  <span className={`leading-snug ${isSelected ? "font-bold text-white" : ""}`}>{item}</span>
+        {/* Comprehensive Scope & Deliverables (Categorized by Sections from ngshah if available) */}
+        {service.sections && service.sections.length > 0 ? (
+          <div className="space-y-5 pt-2">
+            {service.sections.map((sec, sIdx) => (
+              <div key={sIdx} className="space-y-3 bg-[#0a1b33]/70 p-4 sm:p-5 rounded-2xl border border-white/10">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#b8967e]" />
+                    <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wider font-bold text-[#b8967e]">
+                      {sec.heading}
+                    </h3>
+                  </div>
+                  {sec.intro && (
+                    <p className="text-xs text-zinc-400 font-sans">
+                      {sec.intro}
+                    </p>
+                  )}
                 </div>
-              );
-            })}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-zinc-200 font-sans">
+                  {sec.items.map((item, idx) => {
+                    const isSelected = subService && (item.toLowerCase().includes(subService.toLowerCase()) || subService.toLowerCase().includes(item.toLowerCase()));
+                    return (
+                      <div 
+                        key={idx} 
+                        className={`flex items-start gap-2.5 p-2.5 rounded-xl transition-all ${
+                          isSelected 
+                            ? "bg-[#b8967e]/25 border-2 border-[#b8967e] text-white shadow-lg shadow-[#b8967e]/10 ring-1 ring-[#b8967e]" 
+                            : "bg-[#10223b] border border-white/5 hover:border-[#b8967e]/30"
+                        }`}
+                      >
+                        <CheckCircle2 size={14} className={`${isSelected ? "text-white" : "text-[#b8967e]"} shrink-0 mt-0.5`} />
+                        <span className={`leading-snug ${isSelected ? "font-bold text-white" : ""}`}>{item}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        ) : (
+          <div className="space-y-3 pt-2">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#b8967e] font-bold block">
+              Comprehensive Scope of Services & Deliverables:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-200 font-sans">
+              {(service.subServices || service.keyOfferings).map((item, idx) => {
+                const isSelected = subService && (item.toLowerCase().includes(subService.toLowerCase()) || subService.toLowerCase().includes(item.toLowerCase()));
+                return (
+                  <div 
+                    key={idx} 
+                    className={`flex items-start gap-2.5 p-3 rounded-xl transition-all ${
+                      isSelected 
+                        ? "bg-[#b8967e]/25 border-2 border-[#b8967e] text-white shadow-lg shadow-[#b8967e]/10 ring-1 ring-[#b8967e]" 
+                        : "bg-[#12243e] border border-white/5 hover:border-[#b8967e]/30"
+                    }`}
+                  >
+                    <CheckCircle2 size={15} className={`${isSelected ? "text-white" : "text-[#b8967e]"} shrink-0 mt-0.5`} />
+                    <span className={`leading-snug ${isSelected ? "font-bold text-white" : ""}`}>{item}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Modal Actions */}
         <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
