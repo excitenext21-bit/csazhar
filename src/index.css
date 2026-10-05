@@ -348,3 +348,17 @@
   animation: pulseSlow 10s ease-in-out infinite alternate;
 }
 
+/* Ambient gentle float animation for sleek industry icons */
+@keyframes sleekIconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.5deg);
+  }
+}
+
+.animate-sleek-icon {
+  animation: sleekIconFloat 3.8s ease-in-out infinite;
+}
+

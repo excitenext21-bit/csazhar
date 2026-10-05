@@ -597,7 +597,7 @@ export const SERVICES: ServiceItem[] = [
   }
 ];
 
-export const NAV_SERVICES = SERVICES.slice(0, 9);
+export const NAV_SERVICES = SERVICES;
 
 export const LEADERSHIP_TEAM: TeamMember[] = [
   {

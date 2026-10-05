@@ -7,6 +7,7 @@ import {
 import { TESTIMONIALS } from "../data";
 
 interface ClienteleSectorsProps {
+  initialIndustryId?: string;
   onOpenConsultation: (topic?: string) => void;
   onNavigateContact?: () => void;
   onNavigateServices?: () => void;
@@ -174,8 +175,21 @@ const DETAILED_INDUSTRIES: DetailedIndustry[] = [
   }
 ];
 
-export default function ClienteleSectors({ onOpenConsultation, onNavigateServices }: ClienteleSectorsProps) {
-  const [activeTabId, setActiveTabId] = useState<string>("manufacturing-engineering");
+export default function ClienteleSectors({ 
+  initialIndustryId,
+  onOpenConsultation, 
+  onNavigateServices 
+}: ClienteleSectorsProps) {
+  const [activeTabId, setActiveTabId] = useState<string>(() => {
+    return initialIndustryId || "manufacturing-engineering";
+  });
+
+  useEffect(() => {
+    if (initialIndustryId) {
+      setActiveTabId(initialIndustryId);
+    }
+  }, [initialIndustryId]);
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isTestimonialsPaused, setIsTestimonialsPaused] = useState<boolean>(false);
 
@@ -276,7 +290,10 @@ export default function ClienteleSectors({ onOpenConsultation, onNavigateService
               return (
                 <button
                   key={ind.id}
-                  onClick={() => setActiveTabId(ind.id)}
+                  onClick={() => {
+                    setActiveTabId(ind.id);
+                    window.history.replaceState(null, "", `?page=industries&industry=${encodeURIComponent(ind.id)}`);
+                  }}
                   className={`group flex flex-col items-center justify-center py-5 sm:py-6 px-3 cursor-pointer transition-all duration-300 relative text-center focus:outline-none ${
                     isActive 
                       ? "bg-[#001B41] shadow-xs text-[#b8967e]" 

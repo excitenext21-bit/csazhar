@@ -11,7 +11,6 @@ import FAQSection from "./components/FAQSection";
 import FAQPage from "./components/FAQPage";
 import ContactConsultation from "./components/ContactConsultation";
 import Footer from "./components/Footer";
-import ServiceDetailModal from "./components/ServiceDetailModal";
 import ConsultationModal from "./components/ConsultationModal";
 import ICSIDisclaimerModal from "./components/ICSIDisclaimerModal";
 import StatsCounterBar from "./components/StatsCounterBar";
@@ -24,8 +23,19 @@ export default function App() {
     const p = urlParams.get("page") as PageSlug;
     return p || "home";
   });
-  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sId = urlParams.get("service");
+    if (sId) {
+      return SERVICES.find(s => s.id === sId) || null;
+    }
+    return null;
+  });
   const [selectedSubService, setSelectedSubService] = useState<string | null>(null);
+  const [selectedIndustryId, setSelectedIndustryId] = useState<string>(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get("industry") || "manufacturing-engineering";
+  });
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [consultationTopic, setConsultationTopic] = useState<string | undefined>(undefined);
   const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
@@ -49,18 +59,32 @@ export default function App() {
     setIsDisclaimerOpen(false);
   };
 
-  const handleNavigate = (page: PageSlug, serviceId?: string, subService?: string) => {
+  const handleNavigate = (page: PageSlug, serviceId?: string, subService?: string, industryId?: string) => {
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (industryId) {
+      setSelectedIndustryId(industryId);
+      window.history.pushState(null, "", `?page=${page}&industry=${encodeURIComponent(industryId)}`);
+      return;
+    }
 
     if (serviceId) {
       const srv = SERVICES.find(s => s.id === serviceId);
       if (srv) {
         setSelectedService(srv);
         setSelectedSubService(subService || null);
+        window.history.pushState(null, "", `?page=${page}&service=${encodeURIComponent(serviceId)}`);
+        return;
       }
     } else {
       setSelectedSubService(null);
+    }
+
+    if (page === "home") {
+      window.history.pushState(null, "", "/");
+    } else {
+      window.history.pushState(null, "", `?page=${page}`);
     }
   };
 
@@ -106,8 +130,10 @@ export default function App() {
               onOpenConsultation={(topic) => handleOpenConsultation(topic || "Firm Retainer Advisory")}
               onExploreServices={() => handleNavigate("services")}
               onSelectService={(srv) => {
-                setSelectedService(srv);
-                handleNavigate("services");
+                handleNavigate("services", srv.id);
+              }}
+              onNavigateIndustry={(industryId) => {
+                handleNavigate("industries", undefined, undefined, industryId);
               }}
             />
 
@@ -140,7 +166,8 @@ export default function App() {
             <AboutFirm 
               onNavigateTeam={() => handleNavigate("about-team")}
               onOpenConsultation={() => handleOpenConsultation("Firm Retainer Advisory")}
-              onSelectService={(srv) => setSelectedService(srv)}
+              onSelectService={(srv) => handleNavigate("services", srv.id)}
+              onNavigateIndustry={(industryId) => handleNavigate("industries", undefined, undefined, industryId)}
             />
           </div>
         )}
@@ -150,8 +177,14 @@ export default function App() {
           <div className="pt-28 sm:pt-36">
             <PracticeAreas 
               initialServiceId={selectedService?.id}
-              onSelectService={(srv) => setSelectedService(srv)}
+              selectedSubService={selectedSubService}
+              onSelectService={(srv) => {
+                setSelectedService(srv);
+                setSelectedSubService(null);
+                window.history.pushState(null, "", `?page=services&service=${encodeURIComponent(srv.id)}`);
+              }}
               onOpenConsultation={(topic) => handleOpenConsultation(topic)}
+              onNavigateHome={() => handleNavigate("home")}
             />
           </div>
         )}
@@ -160,6 +193,7 @@ export default function App() {
         {(activePage === "industries" || activePage === "clientele") && (
           <div className="pt-28 sm:pt-36">
             <ClienteleSectors 
+              initialIndustryId={selectedIndustryId}
               onOpenConsultation={() => handleOpenConsultation("Industry Sector Engagement")}
               onNavigateServices={() => handleNavigate("services")}
             />
@@ -241,16 +275,8 @@ export default function App() {
       {/* Global Corporate Footer */}
       <Footer 
         onNavigate={handleNavigate}
-        onSelectService={(srv) => setSelectedService(srv)}
+        onSelectService={(srv) => handleNavigate("services", srv.id)}
         onOpenConsultation={() => handleOpenConsultation()}
-      />
-
-      {/* Service Detail Modal */}
-      <ServiceDetailModal 
-        service={selectedService}
-        subService={selectedSubService}
-        onClose={() => { setSelectedService(null); setSelectedSubService(null); }}
-        onConsult={(title) => handleOpenConsultation(`Inquiry for ${title}`)}
       />
 
       {/* Advisory Consultation Booking Modal */}

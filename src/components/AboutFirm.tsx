@@ -14,9 +14,16 @@ interface AboutFirmProps {
   onOpenConsultation: (topic?: string) => void;
   onExploreServices?: () => void;
   onSelectService?: (service: ServiceItem) => void;
+  onNavigateIndustry?: (industryId: string) => void;
 }
 
-export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExploreServices, onSelectService }: AboutFirmProps) {
+export default function AboutFirm({ 
+  onNavigateTeam, 
+  onOpenConsultation, 
+  onExploreServices, 
+  onSelectService,
+  onNavigateIndustry
+}: AboutFirmProps) {
   const [activePracticeIndex, setActivePracticeIndex] = useState(0);
   const [activeTestimonialIdx, setActiveTestimonialIdx] = useState(0);
   const [isTestimonialPaused, setIsTestimonialPaused] = useState(false);
@@ -170,72 +177,81 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
     <div id="about" className="w-full bg-[#fcfbf9] text-[#1e293b] font-sans">
       
       {/* =========================================================================
-          SECTION 1: THE ABOUT US HERO / TOP NARRATIVE BLOCK (Exact Igual Design)
+          SECTION 1: ABOUT US SECTION (Exact Style from Screenshot)
          ========================================================================= */}
-      <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Signature Arched Portrait with Central Badge & Quote Below */}
-          <div className="lg:col-span-5 space-y-6">
+      <section className="py-20 lg:py-28 bg-white border-b border-zinc-200/80 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
-            {/* Arched Portrait Container with sleek 2px border (Exact 2px sleek frame) */}
-            <div className="relative rounded-t-[140px] rounded-b-[36px] overflow-hidden p-[2px] bg-white border border-zinc-200/80 shadow-2xl group">
-              <div className="rounded-t-[138px] rounded-b-[34px] overflow-hidden h-[460px] sm:h-[500px] relative">
-                <img 
-                  src="/team/azhar_shaikh.jpg" 
-                  alt="CS Azhar Shaikh - Senior Partner" 
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-103"
-                  loading="eager"
-                  decoding="sync"
+            {/* Left Column: Portrait with Offset Gold/Tan Block Backdrop (50% of screenshot thickness: 9px desktop, 7px mobile) */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-start">
+              <div className="relative pt-[7px] pl-[7px] sm:pt-[9px] sm:pl-[9px] w-full max-w-[420px]">
+                {/* Offset Background Block in Brand Gold/Tan (Sleek 9px / 7px thickness) */}
+                <div 
+                  className="absolute top-0 left-0 w-[calc(100%-7px)] sm:w-[calc(100%-9px)] h-[calc(100%-7px)] sm:h-[calc(100%-9px)] bg-[#b8967e] rounded-none shadow-sm"
+                  aria-hidden="true" 
                 />
 
-                {/* Subtle dark gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-              </div>
-            </div>
-
-            {/* Bottom Floating Quote Box (Exact Igual Quote Component) */}
-            <div className="flex items-start gap-4 pt-2 px-2">
-              <div className="shrink-0 text-[#b8967e] mt-1">
-                <Quote size={28} className="rotate-180 text-[#b8967e] fill-[#b8967e]/20" />
-              </div>
-              <div className="space-y-1">
-                <p className="text-xs sm:text-sm text-zinc-600 font-serif italic leading-relaxed">
-                  "The good corporate advisor is not the man who has an eye to every side and angle of contingency, and qualifies; but one who builds an enduring shield of governance and enterprise trust."
-                </p>
-                <div className="text-[11px] font-mono font-bold text-[#b8967e] tracking-wider uppercase pt-1">
-                  — CS Azhar Shaikh, Senior Partner
+                {/* Foreground Photo (Extending Down & Right over the Block) */}
+                <div className="relative z-10 w-full aspect-[3.8/5] sm:aspect-[4/5] bg-zinc-100 overflow-hidden shadow-2xl group">
+                  <img 
+                    src="/team/azhar_shaikh.jpg" 
+                    alt="CS Azhar Shaikh - Senior Partner" 
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-103"
+                    loading="eager"
+                    decoding="sync"
+                  />
                 </div>
               </div>
             </div>
 
-          </div>
+            {/* Right Column: Title, Content Paragraphs, More About Us Button & Signature */}
+            <div className="lg:col-span-7 space-y-6 sm:space-y-7 max-w-2xl">
+              
+              {/* Heading: About Us */}
+              <h2 className="font-['Playfair_Display',serif] text-3xl sm:text-4xl lg:text-[46px] font-normal text-[#001B41] leading-tight tracking-tight">
+                About Us
+              </h2>
 
-          {/* Right Column: Title & Story Adjusted Adjacent to Left Portrait */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            
-            {/* Main Section Heading */}
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[42px] font-normal text-[#001B41] leading-[1.2] tracking-tight">
-              We Provide High-End Legal, <br />
-              <span className="font-serif italic text-[#b8967e]">Compliance, and Governance Advisory</span>
-            </h2>
+              {/* Narrative Paragraphs */}
+              <div className="space-y-5 text-sm sm:text-[15px] text-zinc-600 font-['Open_Sans',sans-serif] leading-relaxed font-normal">
+                <p>
+                  Azhar Shaikh & Associates (‘ASA’) is an ICSI Peer-Reviewed Practicing Company Secretary firm and 
+                  Certified Trademark Agent practice in Pune, Maharashtra. We provide high-end legal, compliance, and governance advisory 
+                  across all corporate development phases.
+                </p>
+                <p>
+                  Established in 2001, ASA brings over 24 years of seasoned practice in corporate secretarial audit, 
+                  NCLT compounding, SEBI LODR compliance, and cross-border FEMA structuring, delivering knowledge-based, 
+                  result-driven counsel to corporate boards, private enterprises, and institutional stakeholders.
+                </p>
+              </div>
 
-            {/* Narrative Paragraphs */}
-            <div className="space-y-5 text-base sm:text-lg text-zinc-600 font-sans leading-relaxed">
-              <p>
-                Azhar Shaikh & Associates (‘ASA’) is an ICSI Peer-Reviewed Practicing Company Secretary firm and 
-                Certified Trademark Agent practice in Pune, Maharashtra. We provide high-end legal, compliance, and governance advisory 
-                across all corporate development phases.
-              </p>
-              <p>
-                Established in 2001, ASA brings over 24 years of seasoned practice in corporate secretarial audit, 
-                NCLT compounding, SEBI LODR compliance, and cross-border FEMA structuring, delivering knowledge-based, 
-                result-driven counsel to corporate boards, private enterprises, and institutional stakeholders.
-              </p>
+              {/* More About Us Button (Rectangular Gold Button matching Screenshot) */}
+              <div className="pt-2">
+                <button
+                  onClick={onNavigateTeam}
+                  className="inline-flex items-center justify-center px-8 py-3.5 bg-[#b8967e] hover:bg-[#a68269] text-white font-['Open_Sans',sans-serif] text-sm font-semibold tracking-wide rounded-[3px] shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                >
+                  More About Us
+                </button>
+              </div>
+
+              {/* Signature Section Matching Screenshot (Circled in Green) */}
+              <div className="pt-2">
+                <div className="inline-block space-y-1">
+                  <div className="font-['Alex_Brush',cursive] text-4xl sm:text-5xl text-[#001B41] font-normal leading-none tracking-wide select-none py-1 transform -rotate-1">
+                    Azhar Shaikh
+                  </div>
+                  <div className="text-xs font-['Open_Sans',sans-serif] text-zinc-500 font-medium tracking-wide">
+                    CS Azhar Shaikh — Founder & Senior Partner
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
-
         </div>
       </section>
 
@@ -306,11 +322,11 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
                       <div 
                         key={idx}
                         onClick={() => {
-                          if (onExploreServices) {
+                          const srv = SERVICES.find(s => s.id === card.id);
+                          if (srv && onSelectService) {
+                            onSelectService(srv);
+                          } else if (onExploreServices) {
                             onExploreServices();
-                          } else if (onSelectService) {
-                            const srv = SERVICES.find(s => s.id === card.id);
-                            if (srv) onSelectService(srv);
                           } else {
                             onOpenConsultation(card.title);
                           }
@@ -381,6 +397,7 @@ export default function AboutFirm({ onNavigateTeam, onOpenConsultation, onExplor
       <IndustriesSection 
         onOpenConsultation={onOpenConsultation} 
         onNavigateServices={onExploreServices}
+        onNavigateIndustry={onNavigateIndustry}
       />
 
       {/* =========================================================================
